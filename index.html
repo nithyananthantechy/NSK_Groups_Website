@@ -24,16 +24,32 @@
   <nav id="navbar" class="nav-bar frosted-glass">
     <div class="nav-container">
       <a href="#home" class="nav-logo" id="nav-logo-link">
-        <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="224" height="50" aria-label="NSK Groups - Technology People Space">
+        <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" width="252" height="50" aria-label="NSK Groups - Technology People Space">
           <defs>
-            <linearGradient id="nsk-g" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#1D9E75;stop-opacity:1"/>
-              <stop offset="100%" style="stop-color:#378ADD;stop-opacity:1"/>
+            <linearGradient id="fav-g" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#378ADD;stop-opacity:1"/>
+              <stop offset="100%" style="stop-color:#1D9E75;stop-opacity:1"/>
             </linearGradient>
+            <filter id="fav-glow" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+            </filter>
           </defs>
-          <text x="0" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="url(#nsk-g)">NSK</text>
-          <text x="112" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#E1F5EE">Groups</text>
-          <text x="2" y="66" font-family="'Space Grotesk','Inter',Arial,sans-serif" font-weight="400" font-size="8.5" letter-spacing="3" fill="#1D9E75" opacity="0.75">TECHNOLOGY · PEOPLE · SPACE</text>
+          <!-- Favicon icon: network triangle with glowing nodes -->
+          <g transform="translate(2, 8) scale(0.56)">
+            <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-g)" stroke-width="4.5" transform="rotate(-30 50 50)" stroke-dasharray="8 6" fill="none"/>
+            <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-g)" stroke-width="3" transform="rotate(45 50 50)" opacity="0.5" fill="none"/>
+            <line x1="50" y1="28" x2="28" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
+            <line x1="50" y1="28" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
+            <line x1="28" y1="66" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
+            <circle cx="50" cy="28" r="8" fill="#E1F5EE" filter="url(#fav-glow)"/>
+            <circle cx="28" cy="66" r="8" fill="#1D9E75" filter="url(#fav-glow)"/>
+            <circle cx="72" cy="66" r="8" fill="#378ADD" filter="url(#fav-glow)"/>
+          </g>
+          <!-- NSK in white, Groups in teal -->
+          <text x="62" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#E1F5EE">NSK</text>
+          <text x="174" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#1D9E75">Groups</text>
+          <text x="64" y="66" font-family="'Space Grotesk','Inter',Arial,sans-serif" font-weight="400" font-size="8.5" letter-spacing="3" fill="#1D9E75" opacity="0.75">TECHNOLOGY · PEOPLE · SPACE</text>
         </svg>
       </a>
       
@@ -801,16 +817,32 @@
             <!-- Column 1: Brand & Tagline -->
             <div class="footer-col brand-col">
               <a href="#home" class="footer-logo" id="footer-logo-link">
-                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 72" width="192" height="43" aria-label="NSK Groups - Technology People Space">
+                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" width="216" height="43" aria-label="NSK Groups - Technology People Space">
                   <defs>
-                    <linearGradient id="nsk-g-f" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#1D9E75;stop-opacity:1"/>
-                      <stop offset="100%" style="stop-color:#378ADD;stop-opacity:1"/>
+                    <linearGradient id="fav-gf" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style="stop-color:#378ADD;stop-opacity:1"/>
+                      <stop offset="100%" style="stop-color:#1D9E75;stop-opacity:1"/>
                     </linearGradient>
+                    <filter id="fav-glowf" x="-30%" y="-30%" width="160%" height="160%">
+                      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+                      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                    </filter>
                   </defs>
-                  <text x="0" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="url(#nsk-g-f)">NSK</text>
-                  <text x="112" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#E1F5EE">Groups</text>
-                  <text x="2" y="66" font-family="'Space Grotesk','Inter',Arial,sans-serif" font-weight="400" font-size="8.5" letter-spacing="3" fill="#1D9E75" opacity="0.75">TECHNOLOGY · PEOPLE · SPACE</text>
+                  <!-- Favicon icon: network triangle with glowing nodes -->
+                  <g transform="translate(2, 8) scale(0.56)">
+                    <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-gf)" stroke-width="4.5" transform="rotate(-30 50 50)" stroke-dasharray="8 6" fill="none"/>
+                    <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-gf)" stroke-width="3" transform="rotate(45 50 50)" opacity="0.5" fill="none"/>
+                    <line x1="50" y1="28" x2="28" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
+                    <line x1="50" y1="28" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
+                    <line x1="28" y1="66" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
+                    <circle cx="50" cy="28" r="8" fill="#E1F5EE" filter="url(#fav-glowf)"/>
+                    <circle cx="28" cy="66" r="8" fill="#1D9E75" filter="url(#fav-glowf)"/>
+                    <circle cx="72" cy="66" r="8" fill="#378ADD" filter="url(#fav-glowf)"/>
+                  </g>
+                  <!-- NSK in white, Groups in teal -->
+                  <text x="62" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#E1F5EE">NSK</text>
+                  <text x="174" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#1D9E75">Groups</text>
+                  <text x="64" y="66" font-family="'Space Grotesk','Inter',Arial,sans-serif" font-weight="400" font-size="8.5" letter-spacing="3" fill="#1D9E75" opacity="0.75">TECHNOLOGY · PEOPLE · SPACE</text>
                 </svg>
               </a>
               <p class="footer-tagline">
