@@ -325,20 +325,33 @@ h1, h2, h3, h4, h5, h6 {
 .nav-logo, .footer-logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
+  gap: 0;
+  text-decoration: none;
 }
 
-.logo-icon {
+.logo-svg {
+  display: block;
+  background: transparent;
+  border: none;
+  outline: none;
+  transition: transform var(--t-smooth), filter var(--t-smooth);
+  filter: drop-shadow(0 0 8px rgba(29,158,117,0.3));
+}
+
+.nav-logo:hover .logo-svg,
+.footer-logo:hover .logo-svg {
+  transform: scale(1.04);
+  filter: drop-shadow(0 0 14px rgba(55,138,221,0.5));
+}
+
+/* Legacy — kept for backward compat if any old img tag remains */
+.logo-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
   flex-shrink: 0;
+  background: transparent;
   transition: transform var(--t-smooth);
-}
-
-.nav-logo:hover .logo-icon,
-.footer-logo:hover .logo-icon {
-  transform: rotate(15deg) scale(1.05);
 }
 
 .logo-text {
