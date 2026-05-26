@@ -3,71 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>NSK Groups · Building Tomorrow's Technology Companies</title>
+  <title>NSK Groups | Building Tomorrow's Technology Companies</title>
   <meta name="description" content="NSK Groups is a premium technology holding company building ventures in IT Infrastructure, AI recruitment, and emerging frontiers. Founded by Nithyananthan Nagarajan.">
   
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="index.css">
-  
-  <!-- Unique element IDs for browser tests and accessibility -->
 </head>
-<body class="no-scroll-x">
+<body>
 
-  <!-- Custom Cursor -->
+  <!-- ===================== GLOBAL 3D STARFIELD CANVAS ===================== -->
+  <canvas id="starfield-canvas"></canvas>
+
+  <!-- ===================== SCAN LINES OVERLAY ===================== -->
+  <div class="scan-lines-overlay"></div>
+
+  <!-- ===================== CUSTOM CURSOR ===================== -->
   <div id="custom-cursor" class="custom-cursor"></div>
   <div id="custom-cursor-dot" class="custom-cursor-dot"></div>
 
-  <!-- Navigation Bar -->
-  <nav id="navbar" class="nav-bar frosted-glass">
+  <!-- ===================== NAVIGATION BAR ===================== -->
+  <nav id="navbar" class="nav-bar">
     <div class="nav-container">
+      <!-- Logo -->
       <a href="#home" class="nav-logo" id="nav-logo-link">
-        <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" width="252" height="50" aria-label="NSK Groups - Technology People Space">
-          <defs>
-            <linearGradient id="fav-g" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#378ADD;stop-opacity:1"/>
-              <stop offset="100%" style="stop-color:#1D9E75;stop-opacity:1"/>
-            </linearGradient>
-            <filter id="fav-glow" x="-30%" y="-30%" width="160%" height="160%">
-              <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-              <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-            </filter>
-          </defs>
-          <!-- Favicon icon: network triangle with glowing nodes -->
-          <g transform="translate(2, 8) scale(0.56)">
-            <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-g)" stroke-width="4.5" transform="rotate(-30 50 50)" stroke-dasharray="8 6" fill="none"/>
-            <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-g)" stroke-width="3" transform="rotate(45 50 50)" opacity="0.5" fill="none"/>
-            <line x1="50" y1="28" x2="28" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
-            <line x1="50" y1="28" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
-            <line x1="28" y1="66" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
-            <circle cx="50" cy="28" r="8" fill="#E1F5EE" filter="url(#fav-glow)"/>
-            <circle cx="28" cy="66" r="8" fill="#1D9E75" filter="url(#fav-glow)"/>
-            <circle cx="72" cy="66" r="8" fill="#378ADD" filter="url(#fav-glow)"/>
-          </g>
-          <!-- NSK in white, Groups in teal -->
-          <text x="62" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#E1F5EE">NSK</text>
-          <text x="174" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#1D9E75">Groups</text>
-          <text x="64" y="66" font-family="'Space Grotesk','Inter',Arial,sans-serif" font-weight="400" font-size="8.5" letter-spacing="3" fill="#1D9E75" opacity="0.75">TECHNOLOGY · PEOPLE · SPACE</text>
-        </svg>
+        <div class="logo-crystal-wrapper">
+          <span class="logo-nsk">NSK</span>
+          <span class="logo-groups">Groups</span>
+        </div>
       </a>
       
-      <!-- Desktop Navigation Menu -->
+      <!-- Desktop Nav Menu — 3D Holographic Panels -->
       <ul class="nav-menu" id="nav-desktop-menu">
-        <li><a href="#home" class="nav-link active" id="link-home">Home</a></li>
-        <li><a href="#about" class="nav-link" id="link-about">About</a></li>
-        <li><a href="#ventures" class="nav-link" id="link-ventures">Ventures</a></li>
-        <li><a href="#contact" class="nav-link" id="link-contact">Contact</a></li>
+        <li><a href="#home" class="nav-link active" id="link-home"><span class="nav-link-text">Home</span><span class="nav-link-glow"></span></a></li>
+        <li><a href="#about" class="nav-link" id="link-about"><span class="nav-link-text">About</span><span class="nav-link-glow"></span></a></li>
+        <li><a href="#ventures" class="nav-link" id="link-ventures"><span class="nav-link-text">Ventures</span><span class="nav-link-glow"></span></a></li>
+        <li><a href="#contact" class="nav-link" id="link-contact"><span class="nav-link-text">Contact</span><span class="nav-link-glow"></span></a></li>
       </ul>
 
-      <!-- Navigation CTA -->
+      <!-- Nav CTA -->
       <div class="nav-cta-wrapper">
-        <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm nav-cta-btn" id="nav-schedule-btn">
-          Schedule a Call
+        <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-crystal btn-sm nav-cta-btn" id="nav-schedule-btn">
+          Schedule a Call <span class="btn-arrow">→</span>
         </a>
         
-        <!-- Mobile Hamburger Icon -->
+        <!-- Mobile Hamburger -->
         <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
           <span class="hamburger-line"></span>
           <span class="hamburger-line"></span>
@@ -77,7 +64,7 @@
     </div>
   </nav>
 
-  <!-- Mobile Overlay Menu -->
+  <!-- ===================== MOBILE OVERLAY MENU ===================== -->
   <div class="mobile-overlay" id="mobile-menu-overlay">
     <button class="mobile-close-btn" id="mobile-menu-close" aria-label="Close Navigation Menu">&times;</button>
     <ul class="mobile-menu-links">
@@ -86,806 +73,941 @@
       <li><a href="#ventures" class="mobile-nav-link" id="mob-link-ventures">Ventures</a></li>
       <li><a href="#contact" class="mobile-nav-link" id="mob-link-contact">Contact</a></li>
       <li class="mob-cta-li">
-        <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-filled btn-md" id="mob-schedule-btn">
+        <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-crystal btn-md" id="mob-schedule-btn">
           Schedule a Call →
         </a>
       </li>
     </ul>
   </div>
 
-  <!-- Smooth Scroll Wrapper -->
-  <div id="smooth-scroll-wrapper">
-    <div id="smooth-scroll-content">
+  <!-- ===================== PAGE VIEWS CONTAINER ===================== -->
+  <div class="page-views-container">
 
-      <!-- PAGE VIEWS CONTAINER -->
-      <div class="page-views-container">
+    <!-- ================= PAGE 1: HOME — THE 3D INTERFACE ================= -->
+    <section id="home-view" class="page-view active">
+      
+      <!-- Hero Section — The 3D Interface -->
+      <div class="hero-section" id="hero-section">
+        
+        <!-- HUD Sidebar — System Data Streams -->
+        <div class="hud-sidebar" id="hud-sidebar">
+          <div class="hud-data-block" id="hud-block-1">
+            <span class="hud-label">SYS</span>
+            <span class="hud-value hud-online" id="hud-sys">ONLINE</span>
+            <div class="hud-bar"><div class="hud-bar-fill" style="width: 98%"></div></div>
+          </div>
+          <div class="hud-data-block" id="hud-block-2">
+            <span class="hud-label">VENTURES</span>
+            <span class="hud-value" id="hud-ventures">3</span>
+            <div class="hud-bar"><div class="hud-bar-fill" style="width: 100%"></div></div>
+          </div>
+          <div class="hud-data-block" id="hud-block-3">
+            <span class="hud-label">SIGNAL</span>
+            <span class="hud-value hud-active" id="hud-signal">ACTIVE</span>
+            <div class="hud-bar"><div class="hud-bar-fill hud-bar-pulse" style="width: 75%"></div></div>
+          </div>
+          <div class="hud-data-block" id="hud-block-4">
+            <span class="hud-label">LATENCY</span>
+            <span class="hud-value" id="hud-latency">12ms</span>
+            <div class="hud-bar"><div class="hud-bar-fill" style="width: 15%"></div></div>
+          </div>
+          <div class="hud-separator"></div>
+          <div class="hud-stream" id="hud-stream">
+            <span class="hud-stream-line"></span>
+            <span class="hud-stream-line"></span>
+            <span class="hud-stream-line"></span>
+          </div>
+        </div>
 
-        <!-- ================= PAGE 1: HOME ================= -->
-        <section id="home-view" class="page-view active">
+        <!-- Holographic Brain Network Logo — Near Foreground -->
+        <div class="brain-network-panel" id="brain-network">
+          <canvas id="brain-canvas"></canvas>
+          <div class="brain-label">NSK NEURAL LINK</div>
+        </div>
+
+        <!-- Hero Content — Middle Ground -->
+        <div class="hero-content">
+          <div class="hero-label" id="hero-label-top">
+            <span class="label-bracket">[</span> NSK GROUPS · EST. TAMIL NADU <span class="label-bracket">]</span>
+          </div>
           
-          <!-- Hero Section -->
-          <div class="hero-section">
-            <!-- 3D Starfield Canvas -->
-            <canvas id="starfield"></canvas>
+          <!-- Crystal-Glow Headline -->
+          <h1 class="hero-headline crystal-text" id="hero-headline-text">
+            <span class="crystal-line crystal-line-1">
+              <span class="crystal-word" data-text="Building">Building</span>
+            </span>
+            <span class="crystal-line crystal-line-2">
+              <span class="crystal-word" data-text="Tomorrow's">Tomorrow's</span>
+            </span>
+            <span class="crystal-line crystal-line-3">
+              <span class="crystal-word" data-text="Companies.">Companies.</span>
+            </span>
+          </h1>
+          
+          <!-- Sub-Text Panel -->
+          <div class="hero-subtext-panel">
+            <p class="hero-subtext" id="hero-subheadline-text">
+              NSK Groups is a technology holding company building ventures at the intersection of IT Infrastructure, AI, and emerging frontiers.
+            </p>
+          </div>
+          
+          <!-- CTA Buttons — 3D Crystal Elements -->
+          <div class="hero-actions">
+            <a href="#ventures" class="btn btn-crystal-solid hero-cta-primary" id="hero-explore-btn">
+              <span class="btn-inner">Explore Our Ventures</span>
+              <span class="btn-arrow-crystal">→</span>
+              <div class="btn-refraction"></div>
+            </a>
+            <a href="#contact" class="btn btn-crystal-outline hero-cta-secondary" id="hero-contact-btn">
+              <span class="btn-inner">Get In Touch</span>
+              <div class="btn-refraction"></div>
+            </a>
+            <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-outline hero-cta-tertiary" id="hero-schedule-btn">
+              <span class="btn-inner">Schedule a Call</span>
+              <div class="btn-refraction"></div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Orbit Rings -->
+        <div class="orbit-container">
+          <div class="orbit-ring ring-teal"></div>
+          <div class="orbit-ring ring-blue"></div>
+          <div class="orbit-ring ring-green-faint"></div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator" id="scroll-indicator-arrow">
+          <span class="scroll-arrow-text">SCROLL</span>
+          <svg class="scroll-arrow-icon" viewBox="0 0 24 24" width="24" height="24">
+            <path d="M12 4v16M5 13l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Ventures Preview Section -->
+      <div class="section-padding home-ventures-section">
+        <div class="section-container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-label">OUR VENTURES</span>
+            <h2 class="section-heading crystal-heading-sm">Three Ventures. One Vision.</h2>
+          </div>
+
+          <div class="ventures-grid">
             
-            <!-- 3D Tilted Orbit Rings -->
-            <div class="orbit-container">
-              <div class="orbit-ring ring-teal"></div>
-              <div class="orbit-ring ring-blue"></div>
-            </div>
-
-            <!-- Hero Content -->
-            <div class="hero-content">
-              <div class="hero-label fade-in-up-delay-1" id="hero-label-top">
-                NSK GROUPS &middot; EST. TAMIL NADU
+            <!-- Venture Card 1: NITECHSPARK -->
+            <div class="interactive-card venture-card reveal-on-scroll" id="card-nitechspark">
+              <div class="card-glow"></div>
+              <div class="card-hologram-border"></div>
+              <div class="card-badge badge-live">
+                <span class="pulse-dot"></span> LIVE
               </div>
-              
-              <h1 class="hero-headline" id="hero-headline-text">
-                <span class="word-wrap"><span class="word">Building</span></span>
-                <span class="word-wrap"><span class="word">Tomorrow's</span></span>
-                <br>
-                <span class="word-wrap"><span class="word color-teal">Technology</span></span>
-                <span class="word-wrap"><span class="word color-teal">Companies</span></span>
-              </h1>
-              
-              <p class="hero-subheadline fade-in-up-delay-3" id="hero-subheadline-text">
-                NSK Groups is a technology holding company building ventures at the intersection of IT Infrastructure, AI, and emerging frontiers.
+              <div class="card-icon-box">
+                <svg viewBox="0 0 48 48" class="svg-icon">
+                  <rect x="8" y="4" width="32" height="40" rx="3" fill="none" stroke="var(--primary)" stroke-width="2"/>
+                  <line x1="8" y1="17" x2="40" y2="17" stroke="var(--primary)" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="8" y1="30" x2="40" y2="30" stroke="var(--primary)" stroke-width="1.5" opacity="0.5"/>
+                  <circle cx="14" cy="10" r="2.5" fill="var(--primary)" opacity="0.9">
+                    <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                  <rect x="20" y="8" width="14" height="3" rx="1" fill="var(--primary)" opacity="0.3"/>
+                  <circle cx="14" cy="23" r="2.5" fill="var(--primary)" opacity="0.6"/>
+                  <rect x="20" y="21" width="14" height="3" rx="1" fill="var(--primary)" opacity="0.3"/>
+                  <circle cx="14" cy="36" r="2.5" fill="var(--primary)" opacity="0.6"/>
+                  <rect x="20" y="34" width="14" height="3" rx="1" fill="var(--primary)" opacity="0.3"/>
+                </svg>
+              </div>
+              <h3 class="card-title">NITECHSPARK</h3>
+              <span class="card-tagline">IT Infrastructure · DevOps · Cybersecurity</span>
+              <p class="card-desc">
+                End-to-end IT infrastructure, Linux administration, cloud DevOps, security auditing, and server monitoring for startups and SaaS companies.
               </p>
-              
-              <div class="hero-actions fade-in-up-delay-4">
-                <a href="#ventures" class="btn btn-filled btn-lg hero-cta-primary" id="hero-explore-btn">
-                  Explore Our Ventures →
-                </a>
-                <a href="#contact" class="btn btn-outline btn-lg hero-cta-secondary" id="hero-contact-btn">
-                  Get In Touch
-                </a>
-              </div>
+              <a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="card-link" id="home-link-nitechspark">
+                Visit NITECHSPARK &rarr;
+              </a>
             </div>
 
-            <!-- Scroll Indicator -->
-            <div class="scroll-indicator" id="scroll-indicator-arrow">
-              <span class="scroll-arrow-text">SCROLL</span>
-              <svg class="scroll-arrow-icon" viewBox="0 0 24 24" width="24" height="24">
-                <path d="M12 4v16M5 13l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
+            <!-- Venture Card 2: NiteHire -->
+            <div class="interactive-card venture-card reveal-on-scroll" id="card-nitehire">
+              <div class="card-glow"></div>
+              <div class="card-hologram-border"></div>
+              <div class="card-badge badge-live">
+                <span class="pulse-dot"></span> LIVE
+              </div>
+              <div class="card-icon-box">
+                <svg viewBox="0 0 48 48" class="svg-icon">
+                  <circle cx="24" cy="24" r="6" fill="none" stroke="var(--blue)" stroke-width="2"/>
+                  <circle cx="24" cy="24" r="2" fill="var(--blue)"/>
+                  <circle cx="10" cy="12" r="3" fill="none" stroke="var(--blue)" stroke-width="1.5"/>
+                  <circle cx="38" cy="12" r="3" fill="none" stroke="var(--blue)" stroke-width="1.5"/>
+                  <circle cx="10" cy="36" r="3" fill="none" stroke="var(--blue)" stroke-width="1.5"/>
+                  <circle cx="38" cy="36" r="3" fill="none" stroke="var(--blue)" stroke-width="1.5"/>
+                  <line x1="19" y1="20" x2="13" y2="14" stroke="var(--blue)" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="29" y1="20" x2="35" y2="14" stroke="var(--blue)" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="19" y1="28" x2="13" y2="34" stroke="var(--blue)" stroke-width="1.5" opacity="0.5"/>
+                  <line x1="29" y1="28" x2="35" y2="34" stroke="var(--blue)" stroke-width="1.5" opacity="0.5"/>
+                </svg>
+              </div>
+              <h3 class="card-title">NiteHire</h3>
+              <span class="card-tagline">AI-Powered Recruitment Platform</span>
+              <p class="card-desc">
+                Intelligent recruitment platform with AI-driven screening, interview automation, and candidate management for modern hiring teams.
+              </p>
+              <a href="https://nitehire.nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="card-link" id="home-link-nitehire">
+                Visit NiteHire &rarr;
+              </a>
+            </div>
+
+            <!-- Venture Card 3: niteorbit — REVEALED -->
+            <div class="interactive-card venture-card niteorbit-card reveal-on-scroll" id="card-niteorbit">
+              <div class="card-glow"></div>
+              <div class="card-hologram-border"></div>
+              <div class="card-badge badge-coming-soon">
+                <span class="coming-soon-dot"></span> COMING SOON
+              </div>
+              <div class="card-icon-box">
+                <svg viewBox="0 0 48 48" class="svg-icon">
+                  <circle cx="24" cy="24" r="16" fill="none" stroke="var(--crystal-teal)" stroke-width="1.5" opacity="0.6"/>
+                  <circle cx="24" cy="24" r="10" fill="none" stroke="var(--primary)" stroke-width="1.5">
+                    <animate attributeName="r" values="9;11;9" dur="3s" repeatCount="indefinite"/>
+                  </circle>
+                  <circle cx="24" cy="24" r="4" fill="var(--primary)" opacity="0.7">
+                    <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite"/>
+                  </circle>
+                  <ellipse cx="24" cy="24" rx="20" ry="8" fill="none" stroke="var(--primary)" stroke-width="1" stroke-dasharray="3 2" transform="rotate(-20 24 24)" opacity="0.3"/>
+                </svg>
+              </div>
+              <h3 class="card-title niteorbit-title">NiteOrbit</h3>
+              <span class="card-tagline">New Coordinates · Coming Soon</span>
+              <p class="card-desc">
+                The third venture under NSK Groups. Preparation securely deploying. A new frontier is being mapped.
+              </p>
+              <a href="#ventures" class="card-link internal-route" id="home-link-niteorbit">
+                Learn More &rarr;
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- Stats Bar Section -->
+      <div class="stats-section reveal-on-scroll" id="home-stats-bar">
+        <div class="stats-container">
+          <div class="stat-item">
+            <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Ventures</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Products</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Connections</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-target="1">0</span>
+            <span class="stat-label">Vision · Infinite Ambition</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mission Section -->
+      <div class="section-padding mission-section reveal-on-scroll">
+        <div class="section-container">
+          <div class="mission-wrapper">
+            <div class="quote-line"></div>
+            <div class="mission-content">
+              <span class="section-label">WHY WE EXIST</span>
+              <h2 class="mission-heading crystal-heading-sm">Technology Should Not Have Limits</h2>
+              <p class="mission-body">
+                Every great technology company starts with one person who refused to think small. NSK Groups was founded on the belief that world-class IT infrastructure, intelligent automation, and frontier technology should not be limited to large enterprises. We build ventures that solve real problems &mdash; for startups, enterprises, and industries most have not looked at yet.
+              </p>
             </div>
           </div>
+        </div>
+      </div>
 
-          <!-- Ventures Preview Section -->
-          <div class="section-padding home-ventures-section">
-            <div class="section-container">
-              <div class="section-header reveal-on-scroll">
-                <span class="section-label">OUR VENTURES</span>
-                <h2 class="section-heading">Three Ventures. One Vision.</h2>
-              </div>
-
-              <div class="ventures-grid">
-                
-                <!-- Venture Card 1: NITECHSPARK -->
-                <div class="interactive-card venture-card reveal-on-scroll" id="card-nitechspark">
-                  <div class="card-glow"></div>
-                  <div class="card-badge badge-live">
-                    <span class="pulse-dot"></span> LIVE
-                  </div>
-                  <div class="card-icon-box">
-                    <svg viewBox="0 0 24 24" class="svg-icon">
-                      <path d="M22 12h-4l-3 9L9 3l-3 9H2" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                  </div>
-                  <h3 class="card-title">NITECHSPARK</h3>
-                  <span class="card-tagline">IT Infrastructure &middot; DevOps &middot; Cybersecurity</span>
-                  <p class="card-desc">
-                    End-to-end IT infrastructure, Linux administration, cloud DevOps, security auditing, and server monitoring for startups and SaaS companies.
-                  </p>
-                  <a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="card-link" id="home-link-nitechspark">
-                    Visit NITECHSPARK &rarr;
-                  </a>
-                </div>
-
-                <!-- Venture Card 2: NiteHire -->
-                <div class="interactive-card venture-card reveal-on-scroll" id="card-nitehire">
-                  <div class="card-glow"></div>
-                  <div class="card-badge badge-live">
-                    <span class="pulse-dot"></span> LIVE
-                  </div>
-                  <div class="card-icon-box">
-                    <svg viewBox="0 0 24 24" class="svg-icon">
-                      <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" fill="none" stroke="var(--primary)" stroke-width="2"/>
-                      <path d="M12 6v6l4 2" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round"/>
-                      <circle cx="12" cy="12" r="4" fill="none" stroke="var(--primary)" stroke-width="1.5"/>
-                    </svg>
-                  </div>
-                  <h3 class="card-title">NiteHire</h3>
-                  <span class="card-tagline">AI-Powered Recruitment Platform</span>
-                  <p class="card-desc">
-                    Intelligent recruitment platform with AI-driven screening, interview automation, and candidate management for modern hiring teams.
-                  </p>
-                  <a href="https://nitehire.nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="card-link" id="home-link-nitehire">
-                    Visit NiteHire &rarr;
-                  </a>
-                </div>
-
-                <!-- Venture Card 3: Stealth Venture -->
-                <div class="interactive-card venture-card stealth-card reveal-on-scroll" id="card-stealth">
-                  <div class="card-glow"></div>
-                  <div class="card-badge badge-stealth">STEALTH</div>
-                  <div class="card-icon-box stealth-icon">
-                    <svg viewBox="0 0 24 24" class="svg-icon opacity-40">
-                      <path d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10s10-4.477 10-10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 0-16 8 8 0 0 1 0 16z" fill="none" stroke="var(--text-muted)" stroke-width="1.5"/>
-                      <path d="M12 6a6 6 0 0 0-6 6" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
-                      <path d="M12 9a3 3 0 0 0-3 3" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                  </div>
-                  <h3 class="card-title monospace font-blur redact-hover" data-original="[REDACTED]">[REDACTED]</h3>
-                  <span class="card-tagline">New Coordinates. Coming Soon.</span>
-                  <p class="card-desc">
-                    A new venture currently in stealth. Signals are being sent. Stay on frequency.
-                  </p>
-                  <a href="#contact" class="card-link internal-route" id="home-link-stealth">
-                    Stay Informed &rarr;
-                  </a>
-                </div>
-
-              </div>
-            </div>
+      <!-- Ventures Marquee Strip -->
+      <div class="ventures-marquee-container">
+        <div class="ventures-marquee-track">
+          <div class="ventures-marquee-content">
+            <span>NITECHSPARK</span><span class="marquee-dot"></span>
+            <span>NiteHire</span><span class="marquee-dot"></span>
+            <span class="niteorbit-marquee">NiteOrbit</span><span class="marquee-dot"></span>
+            <span>NEW COORDINATES</span><span class="marquee-dot"></span>
+            <span>NITECHSPARK</span><span class="marquee-dot"></span>
+            <span>NiteHire</span><span class="marquee-dot"></span>
+            <span class="niteorbit-marquee">NiteOrbit</span><span class="marquee-dot"></span>
+            <span>COMING SOON</span><span class="marquee-dot"></span>
           </div>
-
-          <!-- Stats Bar Section -->
-          <div class="stats-section reveal-on-scroll" id="home-stats-bar">
-            <div class="stats-container">
-              <div class="stat-item">
-                <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
-                <span class="stat-label">Ventures Under Development</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" data-target="6">0</span><span class="stat-plus">+</span>
-                <span class="stat-label">Products in Production</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
-                <span class="stat-label">LinkedIn Connections</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number" data-target="1">0</span>
-                <span class="stat-label">Founding Vision, Infinite Ambition</span>
-              </div>
-            </div>
+          <div class="ventures-marquee-content" aria-hidden="true">
+            <span>NITECHSPARK</span><span class="marquee-dot"></span>
+            <span>NiteHire</span><span class="marquee-dot"></span>
+            <span class="niteorbit-marquee">NiteOrbit</span><span class="marquee-dot"></span>
+            <span>NEW COORDINATES</span><span class="marquee-dot"></span>
+            <span>NITECHSPARK</span><span class="marquee-dot"></span>
+            <span>NiteHire</span><span class="marquee-dot"></span>
+            <span class="niteorbit-marquee">NiteOrbit</span><span class="marquee-dot"></span>
+            <span>COMING SOON</span><span class="marquee-dot"></span>
           </div>
+        </div>
+      </div>
 
-          <!-- Mission Section -->
-          <div class="section-padding mission-section reveal-on-scroll">
-            <div class="section-container">
-              <div class="mission-wrapper">
-                <div class="quote-line"></div>
-                <div class="mission-content">
-                  <span class="section-label">WHY WE EXIST</span>
-                  <h2 class="mission-heading">Technology Should Not Have Limits</h2>
-                  <p class="mission-body">
-                    Every great technology company starts with one person who refused to think small. NSK Groups was founded on the belief that world-class IT infrastructure, intelligent automation, and frontier technology should not be limited to large enterprises. We build ventures that solve real problems &mdash; for startups, enterprises, and industries most have not looked at yet.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Ventures Strip (Minimal above footer) -->
-          <div class="ventures-marquee-container">
-            <div class="ventures-marquee-track">
-              <div class="ventures-marquee-content">
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-              </div>
-              <div class="ventures-marquee-content" aria-hidden="true">
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-                <span>NITECHSPARK</span><span class="marquee-dot"></span>
-                <span>NiteHire</span><span class="marquee-dot"></span>
-                <span class="monospace opacity-50 font-blur">[REDACTED]</span><span class="marquee-dot"></span>
-              </div>
-            </div>
-          </div>
-
-        </section>
+    </section>
 
 
-        <!-- ================= PAGE 2: ABOUT ================= -->
-        <section id="about-view" class="page-view">
+    <!-- ================= PAGE 2: ABOUT ================= -->
+    <section id="about-view" class="page-view">
+      
+      <!-- Founder Section -->
+      <div class="section-padding founder-section">
+        <div class="section-container founder-layout">
           
-          <!-- Founder Section -->
-          <div class="section-padding founder-section">
-            <div class="section-container founder-layout">
-              
-              <!-- Left Column: Photo Frame -->
-              <div class="founder-photo-area reveal-on-scroll">
-                <div class="photo-orbit-bg"></div>
-                <div class="photo-frame">
-                  <img src="assets/founder.png" alt="Nithyananthan Nagarajan - Founder & CEO, NSK Groups" class="founder-img">
-                </div>
-              </div>
-
-              <!-- Right Column: Biography -->
-              <div class="founder-info-area reveal-on-scroll">
-                <span class="section-label">THE FOUNDER</span>
-                <h1 class="founder-name">Nithyananthan Nagarajan</h1>
-                <span class="founder-title">Founder & CEO, NSK Groups</span>
-                
-                <div class="founder-bio">
-                  <p>
-                    Nithyananthan is a Systems Engineer and AIOps specialist with deep expertise in IT infrastructure, DevOps automation, Linux administration, and cybersecurity. He founded NITECHSPARK as a solo venture and has since expanded into NSK Groups — a portfolio of technology companies serving startups and enterprises across India.
-                  </p>
-                  <p>
-                    With 6 products in production and ventures spanning IT services, AI recruitment, and emerging technology domains, he is building a technology group rooted in Tamil Nadu with global ambitions.
-                  </p>
-                </div>
-
-                <!-- Founder Social Links -->
-                <div class="founder-socials">
-                  <a href="https://linkedin.com/in/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
-                    <svg viewBox="0 0 24 24" class="svg-icon">
-                      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <rect x="2" y="9" width="4" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                      <circle cx="4" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                  </a>
-                  <a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Founder Website">
-                    <svg viewBox="0 0 24 24" class="svg-icon">
-                      <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
-                      <path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20" fill="none" stroke="currentColor" stroke-width="2"/>
-                      <path d="M2 12h20" fill="none" stroke="currentColor" stroke-width="2"/>
-                    </svg>
-                  </a>
-                </div>
-              </div>
-
+          <!-- Left Column: Photo Frame -->
+          <div class="founder-photo-area reveal-on-scroll">
+            <div class="photo-orbit-bg"></div>
+            <div class="photo-frame">
+              <img src="assets/founder.png" alt="Nithyananthan Nagarajan - Founder & CEO, NSK Groups" class="founder-img">
             </div>
           </div>
 
-          <!-- Group Structure Diagram Section -->
-          <div class="section-padding structure-section">
-            <div class="section-container">
-              <div class="section-header reveal-on-scroll">
-                <span class="section-label">THE STRUCTURE</span>
-                <h2 class="section-heading text-center">One Group. Three Ventures.</h2>
-              </div>
-
-              <!-- Visual Hierarchy Container -->
-              <div class="structure-diagram-container reveal-on-scroll">
-                <!-- Top Box -->
-                <div class="diagram-root-box">
-                  <div class="diagram-box root-box">
-                    <span>NSK Groups</span>
-                  </div>
-                </div>
-
-                <!-- Animated SVG Connecting Lines -->
-                <div class="diagram-lines-svg-wrapper">
-                  <svg id="connecting-lines-svg" viewBox="0 0 600 120" width="100%" height="120" preserveAspectRatio="none">
-                    <!-- Path from Center Top to Box 1, 2, 3 -->
-                    <!-- Center is (300, 0). Box 1 is (100, 120). Box 2 is (300, 120). Box 3 is (500, 120) -->
-                    <path d="M 300,0 L 300,40 L 100,40 L 100,120" id="path-left" class="drawing-path" fill="none" stroke="var(--primary)" stroke-width="2"/>
-                    <path d="M 300,0 L 300,120" id="path-center" class="drawing-path" fill="none" stroke="var(--primary)" stroke-width="2"/>
-                    <path d="M 300,0 L 300,40 L 500,40 L 500,120" id="path-right" class="drawing-path" fill="none" stroke="var(--primary)" stroke-width="2"/>
-                  </svg>
-                </div>
-
-                <!-- Child Boxes Grid -->
-                <div class="diagram-children-grid">
-                  <div class="diagram-box child-box" id="struct-box-1">
-                    <span class="child-box-title">NITECHSPARK</span>
-                    <span class="child-box-subtitle">IT Infrastructure</span>
-                  </div>
-                  <div class="diagram-box child-box" id="struct-box-2">
-                    <span class="child-box-title">NiteHire</span>
-                    <span class="child-box-subtitle">AI Recruitment</span>
-                  </div>
-                  <div class="diagram-box child-box stealth-diagram-box" id="struct-box-3">
-                    <span class="child-box-title monospace font-blur redact-hover" data-original="[REDACTED]">[REDACTED]</span>
-                    <span class="child-box-subtitle">New Coordinates</span>
-                  </div>
-                </div>
-              </div>
-
+          <!-- Right Column: Biography -->
+          <div class="founder-info-area reveal-on-scroll">
+            <span class="section-label">THE FOUNDER</span>
+            <h1 class="founder-name crystal-heading-sm">Nithyananthan Nagarajan</h1>
+            <span class="founder-title">Founder & CEO, NSK Groups</span>
+            
+            <div class="founder-bio">
+              <p>
+                Nithyananthan Nagarajan founded NSK Groups with a clear conviction — that building great technology companies requires systems thinking, not solo execution.
+              </p>
+              <p>
+                NSK Groups was architected from day one as a group structure: each venture operates independently, serves a distinct market, and is built to scale beyond any single founder.
+              </p>
+              <p>
+                NITECHSPARK handles enterprise IT infrastructure. NiteHire transforms how companies recruit using AI. A third venture is being positioned in a frontier domain that most technology companies have not yet entered.
+              </p>
+              <p>
+                The goal is not to be a consultant. The goal is to build institutions.
+              </p>
             </div>
-          </div>
 
-          <!-- Core Values Section -->
-          <div class="section-padding values-section">
-            <div class="section-container">
-              <div class="section-header reveal-on-scroll">
-                <span class="section-label">CORE VALUES</span>
-                <h2 class="section-heading">How We Build</h2>
-              </div>
-
-              <div class="values-grid">
-                
-                <!-- Value Card 1 -->
-                <div class="interactive-card value-card reveal-on-scroll" id="val-card-1">
-                  <div class="card-glow"></div>
-                  <span class="value-number">01</span>
-                  <h3 class="card-title value-title">Infrastructure First</h3>
-                  <p class="card-desc">
-                    We build on solid foundations before scaling. Clean code, monitored systems, and hardened environments support all business expansion.
-                  </p>
-                </div>
-
-                <!-- Value Card 2 -->
-                <div class="interactive-card value-card reveal-on-scroll" id="val-card-2">
-                  <div class="card-glow"></div>
-                  <span class="value-number">02</span>
-                  <h3 class="card-title value-title">Security Always</h3>
-                  <p class="card-desc">
-                    Every system we touch is hardened by design. From network perimeters to application layer authentications, safety is never an afterthought.
-                  </p>
-                </div>
-
-                <!-- Value Card 3 -->
-                <div class="interactive-card value-card reveal-on-scroll" id="val-card-3">
-                  <div class="card-glow"></div>
-                  <span class="value-number">03</span>
-                  <h3 class="card-title value-title">Think Further</h3>
-                  <p class="card-desc">
-                    We look at domains others have not considered yet. Creating value in traditional sectors using automated technologies and modern tools.
-                  </p>
-                </div>
-
-              </div>
+            <!-- Founder Stats Row -->
+            <div class="founder-stats-row">
+              <span class="founder-stat-item"><span class="stat-val">3</span> Ventures</span>
+              <span class="founder-stat-separator">|</span>
+              <span class="founder-stat-item"><span class="stat-val">6</span> Products</span>
+              <span class="founder-stat-separator">|</span>
+              <span class="founder-stat-item"><span class="stat-val">500+</span> Connections</span>
+              <span class="founder-stat-separator">|</span>
+              <span class="founder-stat-item">Est. <span class="stat-val">2026</span></span>
             </div>
-          </div>
 
-        </section>
-
-
-        <!-- ================= PAGE 3: VENTURES ================= -->
-        <section id="ventures-view" class="page-view">
-          
-          <!-- Venture 1 Section (Left Image/Mockup, Right Text) -->
-          <div class="section-padding detailed-venture-section" id="detailed-nitechspark">
-            <div class="section-container detailed-venture-layout align-left">
-              
-              <!-- Left Column: Geometric Visual -->
-              <div class="venture-visual reveal-on-scroll">
-                <div class="geometric-art-container">
-                  <div class="geo-grid"></div>
-                  <div class="geo-pulse"></div>
-                  <div class="geo-label monospace">NODE_ACTIVE</div>
-                  <!-- Server/Infrastructure wireframe art -->
-                  <div class="geo-wireframe server-wireframe">
-                    <div class="wireframe-shelf"></div>
-                    <div class="wireframe-shelf"></div>
-                    <div class="wireframe-shelf"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: Content -->
-              <div class="venture-details reveal-on-scroll">
-                <div class="badge-row">
-                  <span class="card-badge badge-live"><span class="pulse-dot"></span> LIVE</span>
-                </div>
-                <h1 class="detailed-venture-title">NITECHSPARK</h1>
-                <p class="detailed-venture-desc">
-                  Full-service IT infrastructure company offering Linux server administration, cloud DevOps, cybersecurity auditing, server monitoring (Prometheus, Grafana, PRTG, ELK), web deployment, and SSL/domain configuration. Targeting CTOs, IT Directors, and DevOps leads at startups and SaaS companies.
-                </p>
-
-                <!-- Services Grid -->
-                <div class="services-list-grid">
-                  <div class="service-item">
-                    <span class="service-dot"></span>
-                    <span class="service-name">Linux Administration</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot"></span>
-                    <span class="service-name">Cloud Infrastructure</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot"></span>
-                    <span class="service-name">DevOps Automation</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot"></span>
-                    <span class="service-name">Security Auditing</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot"></span>
-                    <span class="service-name">Server Monitoring</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot"></span>
-                    <span class="service-name">Web Deployment & SSL</span>
-                  </div>
-                </div>
-
-                <div class="detailed-venture-actions">
-                  <a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="btn btn-filled btn-md" id="venture-link-nitechspark-visit">
-                    Visit NITECHSPARK &rarr;
-                  </a>
-                  <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-md" id="venture-link-nitechspark-call">
-                    Schedule a Call &rarr;
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Venture 2 Section (Right Image/Mockup, Left Text - Alternating layout) -->
-          <div class="section-padding detailed-venture-section alt-bg" id="detailed-nitehire">
-            <div class="section-container detailed-venture-layout align-right">
-              
-              <!-- Left Column: Content -->
-              <div class="venture-details reveal-on-scroll">
-                <div class="badge-row">
-                  <span class="card-badge badge-live"><span class="pulse-dot"></span> LIVE</span>
-                </div>
-                <h1 class="detailed-venture-title">NiteHire</h1>
-                <p class="detailed-venture-desc">
-                  AI-powered recruitment platform that transforms how companies hire. Features two-level AI screening, automated interview management, offer and onboarding workflows, and full candidate-HR-admin portals built for modern hiring teams.
-                </p>
-
-                <!-- Features Grid -->
-                <div class="services-list-grid">
-                  <div class="service-item">
-                    <span class="service-dot-blue"></span>
-                    <span class="service-name">AI Resume Screening</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot-blue"></span>
-                    <span class="service-name">Communication Assessment</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot-blue"></span>
-                    <span class="service-name">Interview Automation</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot-blue"></span>
-                    <span class="service-name">Offer Management</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot-blue"></span>
-                    <span class="service-name">Candidate Portal</span>
-                  </div>
-                  <div class="service-item">
-                    <span class="service-dot-blue"></span>
-                    <span class="service-name">HR Dashboard</span>
-                  </div>
-                </div>
-
-                <div class="detailed-venture-actions">
-                  <a href="https://nitehire.nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="btn btn-filled btn-md btn-blue-theme" id="venture-link-nitehire-visit">
-                    Visit NiteHire &rarr;
-                  </a>
-                </div>
-              </div>
-
-              <!-- Right Column: Geometric Visual -->
-              <div class="venture-visual reveal-on-scroll">
-                <div class="geometric-art-container">
-                  <div class="geo-grid"></div>
-                  <div class="geo-pulse blue-pulse"></div>
-                  <div class="geo-label monospace blue-text">AI_ENGINE_ON</div>
-                  <!-- AI brain/network wireframe art -->
-                  <div class="geo-wireframe ai-wireframe">
-                    <div class="ai-node node-c"></div>
-                    <div class="ai-node node-1"></div>
-                    <div class="ai-node node-2"></div>
-                    <div class="ai-node node-3"></div>
-                    <div class="ai-node node-4"></div>
-                    <svg class="ai-connections" viewBox="0 0 100 100" width="100%" height="100%">
-                      <line x1="50" y1="50" x2="20" y2="30" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
-                      <line x1="50" y1="50" x2="80" y2="30" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
-                      <line x1="50" y1="50" x2="30" y2="80" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
-                      <line x1="50" y1="50" x2="70" y2="80" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
-                    </svg>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <!-- Venture 3 Section (Left Image/Mockup, Right Text - Alternating layout) -->
-          <div class="section-padding detailed-venture-section" id="detailed-stealth">
-            <div class="section-container detailed-venture-layout align-left">
-              
-              <!-- Left Column: Geometric Visual -->
-              <div class="venture-visual reveal-on-scroll">
-                <div class="geometric-art-container stealth-container-glow">
-                  <div class="geo-grid"></div>
-                  <div class="geo-pulse stealth-pulse"></div>
-                  <div class="geo-label monospace stealth-label-text">SIGNAL_LOCKED</div>
-                  
-                  <!-- Animated Orbit Rings + Signal Pulse inside container -->
-                  <div class="stealth-visual-rings">
-                    <div class="stealth-ring ring-1"></div>
-                    <div class="stealth-ring ring-2"></div>
-                    <div class="stealth-ring ring-3"></div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: Content -->
-              <div class="venture-details reveal-on-scroll">
-                <div class="badge-row">
-                  <span class="card-badge badge-stealth">STEALTH</span>
-                </div>
-                <h1 class="detailed-venture-title">Something New Is Coming</h1>
-                
-                <p class="detailed-venture-desc">
-                  A third venture is currently in active development. It operates at the intersection of IT infrastructure and a domain most technology companies have not fully explored yet. If you are in the right industry, you may already know what this is.
-                </p>
-                <p class="detailed-venture-subtext">
-                  "New Coordinates. Stay on frequency."
-                </p>
-
-                <div class="detailed-venture-actions">
-                  <a href="#contact?subject=stealth" class="btn btn-filled btn-md internal-route" id="venture-link-stealth-register">
-                    Register Interest &rarr;
-                  </a>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </section>
-
-
-        <!-- ================= PAGE 4: CONTACT ================= -->
-        <section id="contact-view" class="page-view">
-          
-          <div class="section-padding contact-main-section">
-            <div class="section-container">
-              
-              <!-- Headers -->
-              <div class="section-header reveal-on-scroll text-center">
-                <h1 class="contact-title-main">Let's Connect</h1>
-                <p class="contact-subheadline-main">
-                  Whether you are a client, partner, investor, or curious about what we are building next — we want to hear from you.
-                </p>
-              </div>
-
-              <div class="contact-grid">
-                
-                <!-- Left Column: Contact Form -->
-                <div class="contact-form-card reveal-on-scroll" id="contact-form-container">
-                  <form id="nsk-contact-form" class="contact-form" autocomplete="off">
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="form-name">Full Name *</label>
-                        <input type="text" id="form-name" name="name" required placeholder="Nithyananthan Nagarajan">
-                      </div>
-                    </div>
-
-                    <div class="form-row split-row">
-                      <div class="form-group">
-                        <label for="form-email">Email Address *</label>
-                        <input type="email" id="form-email" name="email" required placeholder="email@domain.com">
-                      </div>
-                      <div class="form-group">
-                        <label for="form-company">Company Name</label>
-                        <input type="text" id="form-company" name="company" placeholder="NSK Groups">
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="form-subject">Subject *</label>
-                        <select id="form-subject" name="subject" required>
-                          <option value="" disabled selected>Select an option</option>
-                          <option value="nitechspark">NITECHSPARK Services</option>
-                          <option value="nitehire">NiteHire Platform</option>
-                          <option value="partnership">Partnership Opportunity</option>
-                          <option value="investment">Investment Inquiry</option>
-                          <option value="stealth">Stealth Venture Interest</option>
-                          <option value="general">General</option>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="form-row">
-                      <div class="form-group">
-                        <label for="form-message">Message *</label>
-                        <textarea id="form-message" name="message" rows="5" required placeholder="Describe your project or inquiry..."></textarea>
-                      </div>
-                    </div>
-
-                    <!-- Form submission alerts -->
-                    <div class="form-alert alert-success" id="form-success-msg">
-                      Message sent successfully! We will get back to you shortly.
-                    </div>
-                    <div class="form-alert alert-error" id="form-error-msg">
-                      There was an error sending your message. Please check all required fields and try again.
-                    </div>
-
-                    <button type="submit" class="btn btn-filled btn-full" id="form-submit-button">
-                      Submit Inquiry
-                    </button>
-                  </form>
-                </div>
-
-                <!-- Right Column: Direct Contact Info -->
-                <div class="contact-details-card reveal-on-scroll" id="contact-details-panel">
-                  
-                  <div class="contact-info-list">
-                    
-                    <!-- Direct Coordinate 1 -->
-                    <div class="info-item">
-                      <div class="info-icon">
-                        <svg viewBox="0 0 24 24" class="svg-icon">
-                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M22 6l-10 7L2 6" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </div>
-                      <div class="info-text">
-                        <span class="info-label">EMAIL COORDINATES</span>
-                        <a href="mailto:nithyananthan@nitechsaprk.in" class="info-value">nithyananthan@nitechsaprk.in</a>
-                      </div>
-                    </div>
-
-                    <!-- Direct Coordinate 2 -->
-                    <div class="info-item">
-                      <div class="info-icon">
-                        <svg viewBox="0 0 24 24" class="svg-icon">
-                          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                      </div>
-                      <div class="info-text">
-                        <span class="info-label">PHONE COORDINATES</span>
-                        <a href="tel:+916385576354" class="info-value">+91 63855 76354</a>
-                      </div>
-                    </div>
-
-                    <!-- Direct Coordinate 3 -->
-                    <div class="info-item">
-                      <div class="info-icon">
-                        <svg viewBox="0 0 24 24" class="svg-icon">
-                          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          <circle cx="12" cy="10" r="3" fill="none" stroke="var(--primary)" stroke-width="2"/>
-                        </svg>
-                      </div>
-                      <div class="info-text">
-                        <span class="info-label">LOCATION</span>
-                        <address class="info-value address-text">Erode, Tamil Nadu, India</address>
-                      </div>
-                    </div>
-
-                    <!-- Direct Coordinate 4 -->
-                    <div class="info-item">
-                      <div class="info-icon">
-                        <svg viewBox="0 0 24 24" class="svg-icon">
-                          <circle cx="12" cy="12" r="10" fill="none" stroke="var(--primary)" stroke-width="2"/>
-                          <path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20M2 12h20" fill="none" stroke="var(--primary)" stroke-width="2"/>
-                        </svg>
-                      </div>
-                      <div class="info-text">
-                        <span class="info-label">WEBSITE</span>
-                        <a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="info-value">nitechsaprk.in</a>
-                      </div>
-                    </div>
-
-                  </div>
-
-                  <div class="contact-cta-wrapper">
-                    <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-md btn-full text-center" id="contact-panel-schedule-btn">
-                      Schedule a Call &rarr;
-                    </a>
-                  </div>
-
-                  <div class="contact-social-row">
-                    <a href="https://linkedin.com/in/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
-                      <svg viewBox="0 0 24 24" class="svg-icon">
-                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <rect x="2" y="9" width="4" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <circle cx="4" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="2"/>
-                      </svg>
-                    </a>
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-
-        </section>
-
-      </div> <!-- End page-views-container -->
-
-      <!-- ================= FOOTER ================= -->
-      <footer class="site-footer">
-        <div class="footer-container">
-          
-          <div class="footer-grid">
-            <!-- Column 1: Brand & Tagline -->
-            <div class="footer-col brand-col">
-              <a href="#home" class="footer-logo" id="footer-logo-link">
-                <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 72" width="216" height="43" aria-label="NSK Groups - Technology People Space">
-                  <defs>
-                    <linearGradient id="fav-gf" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" style="stop-color:#378ADD;stop-opacity:1"/>
-                      <stop offset="100%" style="stop-color:#1D9E75;stop-opacity:1"/>
-                    </linearGradient>
-                    <filter id="fav-glowf" x="-30%" y="-30%" width="160%" height="160%">
-                      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
-                      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
-                    </filter>
-                  </defs>
-                  <!-- Favicon icon: network triangle with glowing nodes -->
-                  <g transform="translate(2, 8) scale(0.56)">
-                    <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-gf)" stroke-width="4.5" transform="rotate(-30 50 50)" stroke-dasharray="8 6" fill="none"/>
-                    <ellipse cx="50" cy="50" rx="38" ry="14" stroke="url(#fav-gf)" stroke-width="3" transform="rotate(45 50 50)" opacity="0.5" fill="none"/>
-                    <line x1="50" y1="28" x2="28" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
-                    <line x1="50" y1="28" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
-                    <line x1="28" y1="66" x2="72" y2="66" stroke="#1D9E75" stroke-width="3" opacity="0.7"/>
-                    <circle cx="50" cy="28" r="8" fill="#E1F5EE" filter="url(#fav-glowf)"/>
-                    <circle cx="28" cy="66" r="8" fill="#1D9E75" filter="url(#fav-glowf)"/>
-                    <circle cx="72" cy="66" r="8" fill="#378ADD" filter="url(#fav-glowf)"/>
-                  </g>
-                  <!-- NSK in white, Groups in teal -->
-                  <text x="62" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#E1F5EE">NSK</text>
-                  <text x="174" y="46" font-family="'Space Grotesk','Inter',Arial Black,sans-serif" font-weight="800" font-size="50" letter-spacing="-1" fill="#1D9E75">Groups</text>
-                  <text x="64" y="66" font-family="'Space Grotesk','Inter',Arial,sans-serif" font-weight="400" font-size="8.5" letter-spacing="3" fill="#1D9E75" opacity="0.75">TECHNOLOGY · PEOPLE · SPACE</text>
+            <!-- Founder Social Links -->
+            <div class="founder-socials">
+              <a href="https://www.linkedin.com/in/nithyananthan-nagarajan/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                <svg viewBox="0 0 24 24" class="svg-icon">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="2" y="9" width="4" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="4" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="2"/>
                 </svg>
               </a>
-              <p class="footer-tagline">
-                Building technology ventures from Tamil Nadu, India.
-              </p>
+              <a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Founder Website">
+                <svg viewBox="0 0 24 24" class="svg-icon">
+                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20M12 2a14.5 14.5 0 0 1 0 20" fill="none" stroke="currentColor" stroke-width="2"/>
+                  <path d="M2 12h20" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+              </a>
             </div>
-
-            <!-- Column 2: Ventures -->
-            <div class="footer-col">
-              <h4 class="footer-title">Ventures</h4>
-              <ul class="footer-links">
-                <li><a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="footer-link">NITECHSPARK &rarr;</a></li>
-                <li><a href="https://nitehire.nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="footer-link">NiteHire &rarr;</a></li>
-                <li class="stealth-footer-li"><span class="footer-no-hover monospace font-blur">[REDACTED]</span></li>
-              </ul>
-            </div>
-
-            <!-- Column 3: Company -->
-            <div class="footer-col">
-              <h4 class="footer-title">Company</h4>
-              <ul class="footer-links">
-                <li><a href="#about" class="footer-link">About</a></li>
-                <li><a href="#ventures" class="footer-link">Ventures</a></li>
-                <li><a href="#contact" class="footer-link">Contact</a></li>
-                <li><a href="https://linkedin.com/in/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a></li>
-                <li><a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="footer-link">Schedule a Call &rarr;</a></li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="footer-divider"></div>
-
-          <!-- Bottom Bar -->
-          <div class="footer-bottom">
-            <p>&copy; 2025 NSK Groups. All rights reserved.</p>
-            <p class="footer-sub-bottom">NITECHSPARK &middot; NiteHire &mdash; Ventures of NSK Groups</p>
           </div>
 
         </div>
-      </footer>
+      </div>
 
-    </div> <!-- End smooth-scroll-content -->
-  </div> <!-- End smooth-scroll-wrapper -->
+      <!-- ===================== THE 3D HIERARCHY (Structure) ===================== -->
+      <div class="section-padding structure-section">
+        <div class="section-container">
+          <div class="section-header reveal-on-scroll" style="text-align:center;">
+            <span class="section-label">THE STRUCTURE</span>
+            <h2 class="section-heading crystal-heading-sm text-center">One Group. Three Ventures.</h2>
+          </div>
+
+          <!-- Volumetric 3D Hierarchy Model -->
+          <div class="crystal-structure reveal-on-scroll">
+            
+            <!-- Structural Beam Conduit — Right Side Border -->
+            <div class="structural-beam-conduit"></div>
+
+            <!-- Root: NSK Groups — Central Crystal Construct -->
+            <div class="crystal-root-wrapper">
+              <div class="crystal-node crystal-root" id="crystal-root">
+                <div class="crystal-shape crystal-hexagon">
+                  <div class="hex-face hex-f1"></div>
+                  <div class="hex-face hex-f2"></div>
+                  <div class="hex-face hex-f3"></div>
+                  <div class="hex-face hex-f4"></div>
+                  <div class="hex-face hex-f5"></div>
+                  <div class="hex-face hex-f6"></div>
+                </div>
+                <div class="crystal-inner-glow"></div>
+                <div class="crystal-outer-ring"></div>
+                <div class="crystal-lattice-pattern"></div>
+              </div>
+              <span class="crystal-label crystal-label-root">NSK Groups</span>
+            </div>
+
+            <!-- Glowing SVG Connection Tendrils -->
+            <div class="crystal-lines-wrapper">
+              <svg class="crystal-lines-svg" viewBox="0 0 900 160" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                  <linearGradient id="line-grad-teal" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#1D9E75" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#1D9E75" stop-opacity="0.2"/>
+                  </linearGradient>
+                  <linearGradient id="line-grad-blue" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" stop-color="#378ADD" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#378ADD" stop-opacity="0.2"/>
+                  </linearGradient>
+                  <filter id="glow-line">
+                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                  <filter id="glow-line-intense">
+                    <feGaussianBlur stdDeviation="6" result="blur"/>
+                    <feMerge>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="blur"/>
+                      <feMergeNode in="SourceGraphic"/>
+                    </feMerge>
+                  </filter>
+                </defs>
+                <!-- Left path -->
+                <path d="M 450,0 C 450,50 150,60 150,160" class="drawing-path crystal-path" fill="none" stroke="url(#line-grad-teal)" stroke-width="2.5" filter="url(#glow-line)"/>
+                <!-- Center path -->
+                <path d="M 450,0 L 450,160" class="drawing-path crystal-path" fill="none" stroke="url(#line-grad-blue)" stroke-width="2.5" filter="url(#glow-line)"/>
+                <!-- Right path -->
+                <path d="M 450,0 C 450,50 750,60 750,160" class="drawing-path crystal-path" fill="none" stroke="url(#line-grad-teal)" stroke-width="2.5" filter="url(#glow-line)"/>
+
+                <!-- Energy pulse dots flowing down lines -->
+                <circle r="5" fill="#1D9E75" opacity="0.9" filter="url(#glow-line-intense)">
+                  <animateMotion dur="3s" repeatCount="indefinite" path="M 450,0 C 450,50 150,60 150,160"/>
+                </circle>
+                <circle r="5" fill="#378ADD" opacity="0.9" filter="url(#glow-line-intense)">
+                  <animateMotion dur="2.5s" repeatCount="indefinite" path="M 450,0 L 450,160"/>
+                </circle>
+                <circle r="5" fill="#1D9E75" opacity="0.9" filter="url(#glow-line-intense)">
+                  <animateMotion dur="3.5s" repeatCount="indefinite" path="M 450,0 C 450,50 750,60 750,160"/>
+                </circle>
+              </svg>
+            </div>
+
+            <!-- Children: Three Venture Nodes -->
+            <div class="crystal-children-grid">
+
+              <!-- NITECHSPARK — Computing Node -->
+              <div class="crystal-child-wrapper" id="crystal-child-1">
+                <div class="crystal-node crystal-child crystal-teal">
+                  <div class="crystal-shape crystal-dodeca">
+                    <div class="dodeca-face df1"></div>
+                    <div class="dodeca-face df2"></div>
+                    <div class="dodeca-face df3"></div>
+                    <div class="dodeca-face df4"></div>
+                    <div class="dodeca-face df5"></div>
+                    <div class="dodeca-face df6"></div>
+                  </div>
+                  <div class="crystal-inner-glow glow-teal"></div>
+                  <div class="node-circuitry"></div>
+                </div>
+                <div class="crystal-label-group">
+                  <span class="crystal-label crystal-label-child crystal-label-teal-text">NITECHSPARK</span>
+                  <span class="crystal-sublabel crystal-sublabel-teal">IT INFRASTRUCTURE</span>
+                </div>
+              </div>
+
+              <!-- NiteHire — Organic Network Node -->
+              <div class="crystal-child-wrapper" id="crystal-child-2">
+                <div class="crystal-node crystal-child crystal-blue">
+                  <div class="crystal-shape crystal-cube">
+                    <div class="cube-face cube-front"></div>
+                    <div class="cube-face cube-back"></div>
+                    <div class="cube-face cube-left"></div>
+                    <div class="cube-face cube-right"></div>
+                    <div class="cube-face cube-top"></div>
+                    <div class="cube-face cube-bottom"></div>
+                  </div>
+                  <div class="crystal-inner-glow glow-blue"></div>
+                </div>
+                <div class="crystal-label-group">
+                  <span class="crystal-label crystal-label-child crystal-label-blue-text">NiteHire</span>
+                  <span class="crystal-sublabel crystal-sublabel-blue">AI RECRUITMENT</span>
+                </div>
+              </div>
+
+              <!-- niteorbit — Revealed Pre-Activation Node -->
+              <div class="crystal-child-wrapper" id="crystal-child-3">
+                <div class="crystal-node crystal-child crystal-niteorbit">
+                  <div class="crystal-shape crystal-dodeca">
+                    <div class="dodeca-face df1 niteorbit-face"></div>
+                    <div class="dodeca-face df2 niteorbit-face"></div>
+                    <div class="dodeca-face df3 niteorbit-face"></div>
+                    <div class="dodeca-face df4 niteorbit-face"></div>
+                    <div class="dodeca-face df5 niteorbit-face"></div>
+                    <div class="dodeca-face df6 niteorbit-face"></div>
+                  </div>
+                  <div class="crystal-inner-glow glow-niteorbit"></div>
+                  <div class="niteorbit-preactivation-field"></div>
+                </div>
+                <div class="crystal-label-group">
+                  <span class="crystal-label crystal-label-child crystal-label-niteorbit">NiteOrbit</span>
+                  <span class="crystal-sublabel crystal-sublabel-teal">NEW COORDINATES</span>
+                  <span class="crystal-coming-soon-marker">COMING SOON · PREPARATION SECURELY DEPLOYING</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Core Values Section -->
+      <div class="section-padding values-section">
+        <div class="section-container">
+          <div class="section-header reveal-on-scroll">
+            <span class="section-label">CORE VALUES</span>
+            <h2 class="section-heading crystal-heading-sm">How We Build</h2>
+          </div>
+
+          <div class="values-grid">
+            
+            <div class="interactive-card value-card reveal-on-scroll" id="val-card-1">
+              <div class="card-glow"></div>
+              <div class="card-hologram-border"></div>
+              <span class="value-number">01</span>
+              <h3 class="card-title value-title">Systems First</h3>
+              <p class="card-desc">
+                We architect before we build. Every venture under NSK Groups is designed to operate as an independent system — not dependent on any single person.
+              </p>
+            </div>
+
+            <div class="interactive-card value-card reveal-on-scroll" id="val-card-2">
+              <div class="card-glow"></div>
+              <div class="card-hologram-border"></div>
+              <span class="value-number">02</span>
+              <h3 class="card-title value-title">Security by Design</h3>
+              <p class="card-desc">
+                Every platform we ship and every system we deploy is hardened before it is handed over. Security is not a feature — it is a foundation.
+              </p>
+            </div>
+
+            <div class="interactive-card value-card reveal-on-scroll" id="val-card-3">
+              <div class="card-glow"></div>
+              <div class="card-hologram-border"></div>
+              <span class="value-number">03</span>
+              <h3 class="card-title value-title">Look Further</h3>
+              <p class="card-desc">
+                The most valuable opportunities exist in domains where technology has not arrived yet. NSK Groups deliberately builds in spaces others have not considered.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 3: VENTURES ================= -->
+    <section id="ventures-view" class="page-view">
+      
+      <!-- Venture 1: NITECHSPARK -->
+      <div class="section-padding detailed-venture-section" id="detailed-nitechspark">
+        <div class="section-container detailed-venture-layout align-left">
+          
+          <!-- Left Column: Terminal Window -->
+          <div class="venture-visual reveal-on-scroll">
+            <div class="terminal-window">
+              <div class="terminal-titlebar">
+                <span class="terminal-dot red"></span>
+                <span class="terminal-dot yellow"></span>
+                <span class="terminal-dot green"></span>
+                <span class="terminal-titlebar-text">NITECHSPARK_MONITOR</span>
+              </div>
+              <div class="terminal-body" id="nitechspark-terminal">
+                <div class="terminal-line" data-text="> System: ONLINE"></div>
+                <div class="terminal-line" data-text="> Uptime: 99.98%"></div>
+                <div class="terminal-line" data-text="> Active Alerts: 0"></div>
+                <div class="terminal-line" data-text="> Security Score: A+"></div>
+                <div class="terminal-line" data-text="> Last Audit: PASSED"></div>
+                <div class="terminal-line" data-text="> Servers Monitored: 47"></div>
+                <div class="terminal-line" data-text="> Incidents Resolved: 312"></div>
+                <div class="terminal-line"><span class="terminal-cursor"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Content -->
+          <div class="venture-details reveal-on-scroll">
+            <div class="badge-row">
+              <span class="card-badge badge-live"><span class="pulse-dot"></span> LIVE</span>
+            </div>
+            <h1 class="detailed-venture-title crystal-heading-sm">NITECHSPARK</h1>
+            <p class="detailed-venture-desc">
+              Full-service IT infrastructure company offering Linux server administration, cloud DevOps, cybersecurity auditing, server monitoring (Prometheus, Grafana, PRTG, ELK), web deployment, and SSL/domain configuration.
+            </p>
+
+            <div class="services-list-grid">
+              <div class="service-item"><span class="service-dot"></span><span class="service-name">Linux Administration</span></div>
+              <div class="service-item"><span class="service-dot"></span><span class="service-name">Cloud Infrastructure</span></div>
+              <div class="service-item"><span class="service-dot"></span><span class="service-name">DevOps Automation</span></div>
+              <div class="service-item"><span class="service-dot"></span><span class="service-name">Security Auditing</span></div>
+              <div class="service-item"><span class="service-dot"></span><span class="service-name">Server Monitoring</span></div>
+              <div class="service-item"><span class="service-dot"></span><span class="service-name">Web Deployment & SSL</span></div>
+            </div>
+
+            <div class="detailed-venture-actions">
+              <a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-solid btn-md" id="venture-link-nitechspark-visit">
+                Visit NITECHSPARK &rarr;
+              </a>
+              <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-outline btn-md" id="venture-link-nitechspark-call">
+                Schedule a Call &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Venture 2: NiteHire -->
+      <div class="section-padding detailed-venture-section alt-bg" id="detailed-nitehire">
+        <div class="section-container detailed-venture-layout align-right">
+          
+          <div class="venture-details reveal-on-scroll">
+            <div class="badge-row">
+              <span class="card-badge badge-live"><span class="pulse-dot"></span> LIVE</span>
+            </div>
+            <h1 class="detailed-venture-title crystal-heading-sm">NiteHire</h1>
+            <p class="detailed-venture-desc">
+              AI-powered recruitment platform that transforms how companies hire. Features two-level AI screening, automated interview management, offer and onboarding workflows.
+            </p>
+
+            <div class="services-list-grid">
+              <div class="service-item"><span class="service-dot-blue"></span><span class="service-name">AI Resume Screening</span></div>
+              <div class="service-item"><span class="service-dot-blue"></span><span class="service-name">Communication Assessment</span></div>
+              <div class="service-item"><span class="service-dot-blue"></span><span class="service-name">Interview Automation</span></div>
+              <div class="service-item"><span class="service-dot-blue"></span><span class="service-name">Offer Management</span></div>
+              <div class="service-item"><span class="service-dot-blue"></span><span class="service-name">Candidate Portal</span></div>
+              <div class="service-item"><span class="service-dot-blue"></span><span class="service-name">HR Dashboard</span></div>
+            </div>
+
+            <div class="detailed-venture-actions">
+              <a href="https://nitehire.nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-solid btn-md btn-blue-theme" id="venture-link-nitehire-visit">
+                Visit NiteHire &rarr;
+              </a>
+            </div>
+          </div>
+
+          <div class="venture-visual reveal-on-scroll">
+            <div class="geometric-art-container">
+              <div class="geo-grid"></div>
+              <div class="geo-pulse blue-pulse"></div>
+              <div class="geo-label monospace blue-text">AI_ENGINE_ON</div>
+              <div class="geo-wireframe ai-wireframe">
+                <div class="ai-node node-c"></div>
+                <div class="ai-node node-1"></div>
+                <div class="ai-node node-2"></div>
+                <div class="ai-node node-3"></div>
+                <div class="ai-node node-4"></div>
+                <svg class="ai-connections" viewBox="0 0 100 100" width="100%" height="100%">
+                  <line x1="50" y1="50" x2="20" y2="30" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
+                  <line x1="50" y1="50" x2="80" y2="30" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
+                  <line x1="50" y1="50" x2="30" y2="80" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
+                  <line x1="50" y1="50" x2="70" y2="80" stroke="rgba(55,138,221,0.4)" stroke-width="1.5"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Venture 3: niteorbit — REVEALED -->
+      <div class="section-padding detailed-venture-section niteorbit-detail-section" id="detailed-niteorbit">
+        <div class="section-container detailed-venture-layout align-left">
+          
+          <div class="venture-visual reveal-on-scroll">
+            <div class="geometric-art-container niteorbit-container-glow">
+              <div class="geo-grid"></div>
+              <div class="geo-pulse niteorbit-pulse"></div>
+              <div class="geo-label monospace niteorbit-label-text">NITEORBIT_INITIALIZING</div>
+              
+              <div class="niteorbit-visual-core">
+                <div class="niteorbit-orbit-ring orbit-r1"></div>
+                <div class="niteorbit-orbit-ring orbit-r2"></div>
+                <div class="niteorbit-orbit-ring orbit-r3"></div>
+                <div class="niteorbit-core-sphere"></div>
+                <div class="niteorbit-satellite sat-1"></div>
+                <div class="niteorbit-satellite sat-2"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="venture-details reveal-on-scroll">
+            <div class="badge-row">
+              <span class="card-badge badge-coming-soon"><span class="coming-soon-dot"></span> COMING SOON</span>
+            </div>
+            <h1 class="detailed-venture-title crystal-heading-sm niteorbit-detail-title">NiteOrbit</h1>
+            
+            <p class="detailed-venture-desc">
+              The third venture under NSK Groups is now revealed. NiteOrbit operates at the intersection of IT infrastructure and a domain most technology companies have not fully explored yet. Preparation is securely deploying.
+            </p>
+            
+            <div class="niteorbit-status-block">
+              <div><span class="term-prefix">&gt;</span> <span class="term-key">VENTURE:</span> <span class="term-value niteorbit-value">NiteOrbit</span></div>
+              <div><span class="term-prefix">&gt;</span> <span class="term-key">COORDINATES:</span> <span class="term-value">NEW COORDINATES</span></div>
+              <div><span class="term-prefix">&gt;</span> <span class="term-key">STATUS:</span> <span class="term-value niteorbit-value">PREPARATION SECURELY DEPLOYING</span></div>
+              <div><span class="term-prefix">&gt;</span> <span class="term-key">LAUNCH:</span> <span class="term-value">COMING SOON</span></div>
+            </div>
+
+            <div class="detailed-venture-actions">
+              <a href="#contact?subject=niteorbit" class="btn btn-crystal-solid btn-md btn-niteorbit-theme internal-route" id="venture-link-niteorbit-register">
+                Register Interest &rarr;
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ================= PAGE 4: CONTACT ================= -->
+    <section id="contact-view" class="page-view">
+      
+      <div class="section-padding contact-main-section">
+        <div class="contact-torus-bg"></div>
+        
+        <div class="section-container">
+          
+          <div class="section-header reveal-on-scroll text-center">
+            <h1 class="contact-title-main crystal-heading-sm">Let's Connect</h1>
+            <p class="contact-subheadline-main">
+              Whether you are a client, partner, investor, or curious about what we are building next — we want to hear from you.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            
+            <!-- Left Column: Contact Form -->
+            <div class="contact-form-card reveal-on-scroll" id="contact-form-container">
+              <form id="nsk-contact-form" class="contact-form" autocomplete="off">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-name">Full Name *</label>
+                    <input type="text" id="form-name" name="name" required placeholder="Nithyananthan Nagarajan">
+                  </div>
+                </div>
+
+                <div class="form-row split-row">
+                  <div class="form-group">
+                    <label for="form-email">Email Address *</label>
+                    <input type="email" id="form-email" name="email" required placeholder="email@domain.com">
+                  </div>
+                  <div class="form-group">
+                    <label for="form-company">Company Name</label>
+                    <input type="text" id="form-company" name="company" placeholder="NSK Groups">
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-subject">Subject *</label>
+                    <select id="form-subject" name="subject" required>
+                      <option value="" disabled selected>Select an option</option>
+                      <option value="nitechspark">NITECHSPARK Services</option>
+                      <option value="nitehire">NiteHire Platform</option>
+                      <option value="partnership">Partnership Opportunity</option>
+                      <option value="investment">Investment Inquiry</option>
+                      <option value="niteorbit">NiteOrbit — Coming Soon</option>
+                      <option value="general">General</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="form-message">Message *</label>
+                    <textarea id="form-message" name="message" rows="5" required placeholder="Describe your project or inquiry..."></textarea>
+                  </div>
+                </div>
+
+                <div class="form-alert alert-success" id="form-success-msg">
+                  Message sent successfully! We will get back to you shortly.
+                </div>
+                <div class="form-alert alert-error" id="form-error-msg">
+                  There was an error sending your message. Please check all required fields and try again.
+                </div>
+
+                <button type="submit" class="btn btn-crystal-solid btn-submit" id="form-submit-button">
+                  Submit Inquiry <span class="submit-arrow">→</span>
+                </button>
+              </form>
+            </div>
+
+            <!-- Right Column: Contact Details -->
+            <div class="contact-details-card reveal-on-scroll" id="contact-details-panel">
+              
+              <div class="contact-info-list">
+                
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg viewBox="0 0 24 24" class="svg-icon">
+                      <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <path d="M22 6l-10 7L2 6" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="info-text">
+                    <span class="info-label">EMAIL COORDINATES</span>
+                    <a href="mailto:nithyananthan@nitechsaprk.in" class="info-value">nithyananthan@nitechsaprk.in</a>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg viewBox="0 0 24 24" class="svg-icon">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <div class="info-text">
+                    <span class="info-label">PHONE COORDINATES</span>
+                    <a href="tel:+916385576354" class="info-value">+91 63855 76354</a>
+                  </div>
+                </div>
+
+                <div class="info-item">
+                  <div class="info-icon">
+                    <svg viewBox="0 0 24 24" class="svg-icon">
+                      <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="12" cy="10" r="3" fill="none" stroke="var(--primary)" stroke-width="2"/>
+                    </svg>
+                  </div>
+                  <div class="info-text">
+                    <span class="info-label">LOCATION</span>
+                    <address class="info-value address-text">Erode, Tamil Nadu, India</address>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="contact-cta-wrapper">
+                <a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-outline btn-md btn-full text-center" id="contact-panel-schedule-btn">
+                  Schedule a Call &rarr;
+                </a>
+              </div>
+
+              <div class="contact-social-row">
+                <a href="https://www.linkedin.com/in/nithyananthan-nagarajan/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile">
+                  <svg viewBox="0 0 24 24" class="svg-icon">
+                    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="2" y="9" width="4" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <circle cx="4" cy="4" r="2" fill="none" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </a>
+              </div>
+
+              <div class="why-contact-block">
+                <h4>Why Contact Us</h4>
+                <ul class="why-contact-list">
+                  <li><span class="why-dot"></span> NITECHSPARK IT services and proposals</li>
+                  <li><span class="why-dot"></span> NiteHire platform demo or partnership</li>
+                  <li><span class="why-dot"></span> Investment or venture discussion</li>
+                  <li><span class="why-dot"></span> Early access to NiteOrbit updates</li>
+                </ul>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div> <!-- End page-views-container -->
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="#home" class="footer-logo" id="footer-logo-link">
+            <div class="logo-crystal-wrapper footer-logo-wrap">
+              <span class="logo-nsk">NSK</span>
+              <span class="logo-groups">Groups</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Building technology ventures from Tamil Nadu, India.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Ventures</h4>
+          <ul class="footer-links">
+            <li><a href="https://nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="footer-link">NITECHSPARK &rarr;</a></li>
+            <li><a href="https://nitehire.nitechsaprk.in" target="_blank" rel="noopener noreferrer" class="footer-link">NiteHire &rarr;</a></li>
+            <li class="niteorbit-footer-li">
+              <span class="footer-link niteorbit-footer-name">NiteOrbit</span>
+              <span class="coming-soon-footer-badge">COMING SOON</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Company</h4>
+          <ul class="footer-links">
+            <li><a href="#about" class="footer-link">About</a></li>
+            <li><a href="#ventures" class="footer-link">Ventures</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+            <li><a href="https://www.linkedin.com/in/nithyananthan-nagarajan/" target="_blank" rel="noopener noreferrer" class="footer-link">LinkedIn &rarr;</a></li>
+            <li><a href="https://calendly.com/nithyananthannagarajan" target="_blank" rel="noopener noreferrer" class="footer-link">Schedule a Call &rarr;</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-contact-list">
+            <li class="footer-contact-item">
+              <a href="mailto:nithyananthan@nitechsaprk.in">nithyananthan@nitechsaprk.in</a>
+            </li>
+            <li class="footer-contact-item">
+              <a href="tel:+916385576354">+91 63855 76354</a>
+            </li>
+            <li class="footer-contact-item">
+              Erode, Tamil Nadu, India
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 NSK Groups. All rights reserved.</p>
+        <p class="footer-sub-bottom">NSK Groups — Building from Tamil Nadu, with global ambitions.</p>
+      </div>
+
+    </div>
+  </footer>
 
   <!-- Application Logic JS -->
   <script src="index.js"></script>
