@@ -172,7 +172,7 @@ img { display: block; max-width: 100%; }
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0 20px;
+  padding: 0;
   height: 72px;
   display: flex;
   align-items: center;
@@ -194,13 +194,13 @@ img { display: block; max-width: 100%; }
 }
 
 .nav-container {
-  max-width: var(--container-max);
+  max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--container-padding);
+  padding: 0 24px;
 }
 
 /* Logo */
@@ -211,6 +211,23 @@ img { display: block; max-width: 100%; }
   align-items: baseline;
   gap: 6px;
   font-family: var(--font-display);
+}
+
+.logo-svg {
+  height: 48px;
+  width: auto;
+  display: block;
+  filter: drop-shadow(0 0 12px rgba(29, 158, 117, 0.2));
+  transition: filter 0.3s ease;
+}
+
+.nav-logo:hover .logo-svg {
+  filter: drop-shadow(0 0 18px rgba(29, 158, 117, 0.4));
+}
+
+.footer-logo-svg {
+  height: 38px;
+  opacity: 0.85;
 }
 
 .logo-nsk {
@@ -2395,6 +2412,8 @@ a.info-value:hover { color: var(--primary-glow); }
     --section-padding: 80px 0;
     --container-padding: 0 20px;
   }
+  
+  .nav-container { padding: 0 16px; }
   
   .hero-section { padding: 100px 20px 60px; }
   

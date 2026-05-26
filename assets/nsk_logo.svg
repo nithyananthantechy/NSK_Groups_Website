@@ -1,29 +1,57 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 72" width="200" height="72">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80">
   <defs>
-    <linearGradient id="nsk-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#1D9E75;stop-opacity:1"/>
-      <stop offset="100%" style="stop-color:#378ADD;stop-opacity:1"/>
+    <linearGradient id="bar-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22d998;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#1bb5a0;stop-opacity:1"/>
     </linearGradient>
   </defs>
-  <!-- NSK bold lettermark -->
+
+  <!-- Three staggered/slanted parallelogram bars (logo icon) -->
+  <!-- Bar 1 (leftmost, shortest): dx/dy = -0.4, Y from 35 to 55, X from 8 to 28 -->
+  <polygon points="8,55 16,35 28,35 20,55" fill="url(#bar-grad)" opacity="0.7"/>
+
+  <!-- Bar 2 (middle): dx/dy = -0.4, Y from 20 to 65, X from 22 to 52 -->
+  <polygon points="22,65 40,20 52,20 34,65" fill="url(#bar-grad)" opacity="0.85"/>
+
+  <!-- Bar 3 (rightmost, tallest, split): dx/dy = -0.4, Y from 5 to 75, X from 36 to 76 -->
+  <!-- Top part: Y from 5 to 25 -->
+  <polygon points="56,25 64,5 76,5 68,25" fill="url(#bar-grad)" opacity="1"/>
+  <!-- Bottom part: Y from 30 to 75 -->
+  <polygon points="36,75 54,30 66,30 48,75" fill="url(#bar-grad)" opacity="1"/>
+
+  <!-- Vertical separator line -->
+  <line x1="88" y1="5" x2="88" y2="75" stroke="#22d998" stroke-width="2" opacity="0.5"/>
+
+  <!-- NSK text -->
   <text
-    x="0"
-    y="48"
-    font-family="'Space Grotesk','Inter',Arial Black,sans-serif"
+    x="104"
+    y="32"
+    font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
     font-weight="800"
-    font-size="52"
-    letter-spacing="-1"
-    fill="url(#nsk-grad)"
+    font-size="28"
+    letter-spacing="-0.5"
+    fill="#ffffff"
   >NSK</text>
-  <!-- Tagline: TECHNOLOGY · PEOPLE · SPACE -->
+
+  <!-- GROUPS text -->
   <text
-    x="2"
-    y="66"
-    font-family="'Space Grotesk','Inter',Arial,sans-serif"
-    font-weight="400"
-    font-size="9"
-    letter-spacing="3"
+    x="104"
+    y="58"
+    font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+    font-weight="800"
+    font-size="28"
+    letter-spacing="-0.5"
     fill="#1D9E75"
-    opacity="0.75"
-  >TECHNOLOGY · PEOPLE · SPACE</text>
+  >GROUPS</text>
+
+  <!-- Tagline -->
+  <text
+    x="104"
+    y="72"
+    font-family="'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+    font-weight="500"
+    font-size="7.5"
+    letter-spacing="2.2"
+    fill="#8fb8a8"
+  >TECHNOLOGY • PEOPLE • SPACE</text>
 </svg>
