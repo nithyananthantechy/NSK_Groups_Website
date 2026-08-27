@@ -258,8 +258,9 @@ function handleRouting() {
   
   const routes = {
     '#home': 'home-view',
-    '#about': 'about-view',
+    '#products': 'products-view',
     '#ventures': 'ventures-view',
+    '#about': 'about-view',
     '#contact': 'contact-view'
   };
   
@@ -463,57 +464,8 @@ function initStructureDiagram() {
 }
 
 // ============================================================================
-// 9. CUSTOM CURSOR
+// 9. INTERACTION HELPERS
 // ============================================================================
-function initCustomCursor() {
-  const cursor = document.getElementById('custom-cursor');
-  const cursorDot = document.getElementById('custom-cursor-dot');
-  
-  if (!cursor || !cursorDot || window.innerWidth <= 1024) return;
-  
-  let cursorX = -100, cursorY = -100;
-  
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    cursorDot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-  });
-  
-  function updateCursorFrame() {
-    const dx = mouseX - cursorX;
-    const dy = mouseY - cursorY;
-    cursorX += dx * 0.35;
-    cursorY += dy * 0.35;
-    cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-    requestAnimationFrame(updateCursorFrame);
-  }
-  updateCursorFrame();
-  
-  window.addEventListener('mouseover', (e) => {
-    const target = e.target.closest('a, button, input, select, textarea, .interactive-card, .redact-hover, .hud-data-block, .brain-network-panel');
-    if (target) {
-      cursor.style.width = '44px';
-      cursor.style.height = '44px';
-      cursor.style.backgroundColor = 'rgba(29, 158, 117, 0.06)';
-      cursor.style.borderColor = 'var(--primary-glow)';
-    } else {
-      cursor.style.width = '28px';
-      cursor.style.height = '28px';
-      cursor.style.backgroundColor = 'transparent';
-      cursor.style.borderColor = 'var(--primary)';
-    }
-  });
-  
-  document.addEventListener('mouseleave', () => {
-    cursor.style.opacity = '0';
-    cursorDot.style.opacity = '0';
-  });
-  
-  document.addEventListener('mouseenter', () => {
-    cursor.style.opacity = '1';
-    cursorDot.style.opacity = '1';
-  });
-}
 
 // ============================================================================
 // 10. TEXT SCRAMBLER (REDACTED TEXT)
@@ -613,8 +565,9 @@ function initHUDTypewriter() {
   const hudItems = [
     { id: 'hud-sys', text: 'ONLINE' },
     { id: 'hud-ventures', text: '3' },
+    { id: 'hud-products-count', text: '5+' },
     { id: 'hud-signal', text: 'ACTIVE' },
-    { id: 'hud-latency', text: '12ms' }
+    { id: 'hud-latency', text: '9ms' }
   ];
   
   hudItems.forEach((item, index) => {
@@ -777,7 +730,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initStarfield();
   initBrainNetwork();
   initRouter();
-  initCustomCursor();
   initMobileMenu();
   initExternalLinks();
   

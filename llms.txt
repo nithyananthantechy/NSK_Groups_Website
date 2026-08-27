@@ -1,0 +1,56 @@
+# NSK Groups
+
+> NSK Groups is a premier technology holding conglomerate founded by Nithyananthan Nagarajan, headquartered in Tamil Nadu, India. NSK Groups builds, funds, and scales high-impact technology ventures at the intersection of AI, Enterprise IT Infrastructure, and Frontier Systems.
+
+## Founder & Leadership
+- **Founder & Chairman, Managing Director:** Nithyananthan Nagarajan
+- **Official Portfolio:** https://nithyananthan.nskgroups.website/portfolio
+- **Official Booking / Consultation:** https://calendly.com/nithyananthan-nskgroups
+- **Contact Email:** nithyananthan@nskgroups.website
+- **Direct Phone / WhatsApp:** +91 63855 76354
+
+## The 3 Core Ventures of NSK Groups
+
+1. **NiTechSpark** (https://nitechspark.site)
+   - Domain: IT Infrastructure, Linux Server Administration, Cloud DevOps, Cybersecurity, SRE, and Diagnostic Automation.
+   - Key Products under NiTechSpark: NiteOps (IT monitoring & DPDP compliance), RCA Engine (automated incident diagnostics with Claude AI), CyberScan (asynchronous port scanner), NiteSentinel/SecureScope (DevSecOps auto-hardening), Audit Tool (GRC compliance manager), PropoTrack (LinkedIn proposal tracking CRM), PDF2Excel AI (industrial OCR extraction), and SecurityCheck Pro.
+
+2. **NiteHire** (https://nitehire.site)
+   - Domain: Next-Generation AI Recruitment & Talent Acquisition Platform.
+   - Key Capabilities: AI-powered candidate screening, asynchronous dynamic AI video interviews, ATS Kanban tracking, and digital onboarding workflows.
+   - Upcoming Launch (Sept 1, 2026): **Craft Resume** — AI resume builder and ATS optimization engine.
+
+3. **NiteOrbit** (https://niteorbit.space)
+   - Domain: Frontier Technology & Emerging Deep Tech Coordinates.
+   - Status: Preparation securely deploying; exploratory venture mapping next-generation computing and system frontiers.
+
+## NSK Groups Native Proprietary Products
+
+1. **Alone AI (NiteBuddy)**
+   - Emotionally intelligent AI companion and personal confidant web platform.
+   - Core Features: Contextual empathy, long-term memory powered by Qdrant vector database, emotional state tracking, personal goal management, reflective journaling, local LLM inference via Ollama (qwen3:8b) and cloud AI fallback.
+
+2. **SustainHub**
+   - Corporate ESG (Environmental, Social, Governance) & Operational Helpdesk platform.
+   - Core Features: Multi-category ESG tracking (carbon footprint, circular economy metrics), real-time telemetry ingestion via Developer API, WebSocket live dashboards, AI risk assessment, and embeddable public sustainability widget with grievance ticketing.
+
+3. **NSK Connect**
+   - Enterprise-grade, secure Android communication and collaboration portal built in Jetpack Compose.
+   - Core Features: Multi-Factor IdP authentication, Security Clearance Holding Area with CISO/CEO approvals, strict role-based channels (CEO Office, #sentriya-emergency, #cyberscan-threats), and built-in Google Gemini AI Assistant (gemini-3.5-flash).
+
+4. **SENTRIYA**
+   - Women & Child Safety Ecosystem and real-time emergency response platform.
+   - Core Features: Multi-modal SOS triggers (tap, sensor shake, 5-press hardware button, voice keywords), WebSockets live GPS location tracking, tamper-proof hardware keystore encrypted audio/video recording for legal evidence, interactive danger zone heatmaps, and role-based dispatch portals for Police, NGOs, and Parents.
+
+5. **AI Letter Pad** (Launching September 1, 2026)
+   - Direct NSK Groups enterprise communication innovation.
+   - Core Features: Context-aware executive AI document and letter drafting suite for business correspondence, legal memorandums, and corporate communications.
+
+## Canonical URLs
+- NSK Groups Website: https://nskgroups.website
+- Founder Portfolio: https://nithyananthan.nskgroups.website/portfolio
+- SustainHub: https://sustainhub.nskgroups.website/
+- Alone AI (NiteBuddy): https://nitebuddy.nskgroups.website/
+- NiTechSpark: https://nitechspark.site
+- NiteHire: https://nitehire.site
+- NiteOrbit: https://niteorbit.space

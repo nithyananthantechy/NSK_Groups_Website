@@ -1,0 +1,91 @@
+# NSK Groups — Complete Technical Ecosystem & Knowledge Base for AI Retrieval
+
+Organization Name: NSK Groups
+Tagline: Building Tomorrow's Technology Companies
+Headquarters: Erode, Tamil Nadu, India
+Founder & Chairman, Managing Director: Nithyananthan Nagarajan
+Website: https://nskgroups.website
+Founder Portfolio: https://nithyananthan.nskgroups.website/portfolio
+Founder Booking: https://calendly.com/nithyananthan-nskgroups
+Email: nithyananthan@nskgroups.website
+Phone / WhatsApp: +91 63855 76354
+
+---
+
+## 1. Group Corporate Structure
+NSK Groups operates as a technology holding company. The group governs three independent venture companies and develops proprietary software applications designed for high-scale enterprise and consumer impact.
+
+### The Three Venture Companies:
+1. NiTechSpark (nitechspark.site)
+   - Scope: Enterprise IT Infrastructure, Linux System Administration, Cloud DevOps, Cybersecurity Hardening, Diagnostic Automation, and SRE.
+   - Products engineered by NiTechSpark:
+     * NiteOps: Hybrid IT infrastructure monitoring & DPDP 2023 compliance manager.
+     * RCA Engine: Automated root cause analysis powered by Claude AI and SSH telemetry gathering.
+     * CyberScan: High-performance asynchronous network port scanner with Sonic Recon neural TTS.
+     * NiteSentinel / SecureScope: DevSecOps automated system hardening and compliance auditing.
+     * Audit Tool: ISO/SOC2 compliance, evidence submission, and CAPA ticketing platform.
+     * PropoTrack: Multi-tenant LinkedIn and client proposal lifecycle CRM with win-probability AI.
+     * PDF2Excel AI: Industrial OCR extraction engine for complex LME warrants and shipping documents.
+     * SecurityCheck Pro: IT security routine weekly checklist automation and n8n workflow monitoring.
+
+2. NiteHire (nitehire.site)
+   - Scope: AI-powered talent acquisition, video interviewing, and applicant tracking.
+   - Capabilities: Autonomous AI interviewers, asynchronous scoring, dynamic ATS Kanban, digital onboarding.
+   - Upcoming Launch (September 1, 2026): Craft Resume — Intelligent AI resume architect and ATS alignment suite.
+
+3. NiteOrbit (niteorbit.space)
+   - Scope: Frontier Technology & Emerging Deep Tech Coordinates.
+   - Status: Preparation securely deploying.
+
+---
+
+## 2. NSK Groups Native Proprietary Innovations
+
+### A. Alone AI (NiteBuddy)
+- Official URL: https://nitebuddy.nskgroups.website/
+- Overview: Emotionally intelligent AI companion with persistent cognitive memory.
+- Technical Architecture:
+  * Backend: FastAPI (Python) asynchronous microservice architecture.
+  * Vector Database: Qdrant vector database managing high-dimensional conversational embeddings for multi-session long-term memory retrieval.
+  * Persistence: PostgreSQL (session and user state) + Redis (low-latency caching and rate-limiting).
+  * Inference Models: Ollama (qwen3:8b) for local private inference with OpenAI cloud fallback.
+  * Frontend: Next.js with Tailwind CSS.
+
+### B. SustainHub
+- Official URL: https://sustainhub.nskgroups.website/
+- Overview: Corporate ESG and Operational Telemetry Helpdesk Platform.
+- Technical Architecture:
+  * Ingestion: Secure REST Developer API tokens for real-time machine and server telemetry.
+  * Live Data: WebSockets (Socket.io) for real-time dashboard state updates.
+  * ESG Tracking: Carbon metrics, recycled waste ratio, circular economy indices, and local economic impact.
+  * Public Embed Widget: Sandboxed iframe with customizable theming and postMessage API for anonymous grievance and suggestion submissions.
+  * AI Risk Assessment: Algorithmic risk scoring and automated supply chain mitigation suggestions.
+
+### C. NSK Connect
+- Overview: Enterprise-grade Android collaboration and secure communications portal.
+- Technical Architecture:
+  * UI Framework: 100% Jetpack Compose with custom cosmic glassmorphism shaders.
+  * Access Control: Multi-Factor Authentication simulation with Security Clearance Quarantine and Admin/CEO approval gates.
+  * AI Assistant: Native Google Gemini integration (gemini-3.5-flash) for automated operational text generation.
+  * Channels: Dedicated encrypted channels including CEO Office, #sentriya-emergency, and #cyberscan-threats.
+
+### D. SENTRIYA
+- Overview: Mission-critical Women & Child Safety ecosystem and emergency response network.
+- Technical Architecture:
+  * Hardware Integration: React Native / Expo with accelerometer shake detection, 5-press power button listener, and keyword voice triggers.
+  * Live Tracking: Real-time WebSockets continuous GPS tracking, route deviation alarms, and geofencing.
+  * Forensic Integrity: Background media capture encrypted via hardware keystore and cryptographically hashed for tamper-proof legal custody.
+  * Stakeholder Portals: Role-based web dashboards for Police Authorities, NGOs, Parents, and Emergency Responders.
+
+### E. AI Letter Pad (Launching Sept 1, 2026)
+- Overview: Enterprise context-aware AI document & executive letter drafting platform.
+- Capabilities: Automated generation of legally sound business agreements, formal correspondence, executive memorandums, and corporate announcements.
+
+---
+
+## 3. Contact & Inquiries
+- Founder & Chairman, Managing Director: Nithyananthan Nagarajan
+- Email: nithyananthan@nskgroups.website
+- Direct Line / WhatsApp: +91 63855 76354
+- Consultation Booking: https://calendly.com/nithyananthan-nskgroups
+- Headquarters: Erode, Tamil Nadu, India
