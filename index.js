@@ -123,7 +123,9 @@ function animateStarfield() {
     }
   });
   
-  requestAnimationFrame(animateStarfield);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    requestAnimationFrame(animateStarfield);
+  }
 }
 
 // ============================================================================
@@ -239,7 +241,9 @@ function animateBrainNetwork() {
     brainCtx.fill();
   }
   
-  requestAnimationFrame(animateBrainNetwork);
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    requestAnimationFrame(animateBrainNetwork);
+  }
 }
 
 // ============================================================================
@@ -316,11 +320,24 @@ function handleQueryParams(queryString) {
 }
 
 function updateNavigationState(activeHash) {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav-link').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === activeHash);
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      link.classList.add('active');
+    } else if (href.startsWith('#') && activeHash) {
+      link.classList.toggle('active', href === activeHash);
+    }
   });
   document.querySelectorAll('.mobile-nav-link').forEach(link => {
-    link.classList.toggle('active', link.getAttribute('href') === activeHash);
+    const href = link.getAttribute('href');
+    if (!href) return;
+    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+      link.classList.add('active');
+    } else if (href.startsWith('#') && activeHash) {
+      link.classList.toggle('active', href === activeHash);
+    }
   });
 }
 
@@ -539,6 +556,12 @@ function initFormHandling() {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
     
+    // Block bots — if honeypot is filled, silently ignore submission
+    const honeypot = contactForm.querySelector('input[name="_gotcha"]');
+    if (honeypot && honeypot.value) {
+      return; // bot detected
+    }
+    
     const submitBtn = document.getElementById('form-submit-button');
     submitBtn.innerText = "Transmitting Signal...";
     submitBtn.disabled = true;
@@ -726,9 +749,15 @@ function initParallax() {
 // INITIALIZATION
 // ============================================================================
 document.addEventListener('DOMContentLoaded', () => {
+  // Respect prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
   // Core systems
-  initStarfield();
-  initBrainNetwork();
+  if (!prefersReducedMotion) {
+    initStarfield();
+    initBrainNetwork();
+  }
+
   initRouter();
   initMobileMenu();
   initExternalLinks();

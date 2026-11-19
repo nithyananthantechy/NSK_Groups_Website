@@ -4468,3 +4468,565 @@ a.info-value:hover { color: var(--primary-glow); }
 
 
 
+
+/* ============================================================================
+   REDUCED MOTION — Respect user preferences
+   ============================================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  #starfield-canvas {
+    display: none !important;
+  }
+  
+  .ventures-marquee-track {
+    animation: none !important;
+  }
+  
+  .orbit-ring {
+    animation: none !important;
+  }
+  
+  .pulse-dot,
+  .coming-soon-dot,
+  .launch-dot,
+  .glow-dot,
+  .glow-amber {
+    animation: none !important;
+  }
+  
+  .hud-bar-pulse {
+    animation: none !important;
+  }
+  
+  .reveal-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* ============================================================================
+   SUB-PAGE NAV ACTIVE STATE
+   ============================================================================ */
+/* Sub-page nav active state */
+.nav-link.is-active .nav-link-text {
+  color: var(--primary-glow);
+}
+
+.nav-link.is-active::after {
+  opacity: 1;
+  transform: scaleX(1);
+}
+
+/* ============================================================================
+   FEATURED DIVISION CARD (NITECHSPARK)
+   ============================================================================ */
+/* Featured division card */
+.venture-card-featured {
+  border: 1px solid rgba(29, 158, 117, 0.45) !important;
+  box-shadow: 0 0 32px rgba(29, 158, 117, 0.18), inset 0 0 24px rgba(29, 158, 117, 0.06);
+}
+
+.venture-card-featured .card-title {
+  color: var(--primary-glow);
+}
+
+/* ============================================================================
+   PRODUCT STRIP CARDS
+   ============================================================================ */
+/* Product strip — compact cards */
+.products-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+
+.product-strip-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-faint);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.product-strip-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--glow-green);
+}
+
+.product-strip-card .product-owner-tag {
+  font-size: 0.65rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.product-strip-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.product-strip-card p {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.product-strip-card .card-link {
+  font-size: 0.8rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  letter-spacing: 0.04em;
+}
+
+.product-strip-card .card-link:hover {
+  color: var(--primary-glow);
+}
+
+/* ============================================================================
+   HOW WE WORK — 3-STEP SECTION
+   ============================================================================ */
+/* How we work — 3-step section */
+.how-we-work-section {
+  padding: var(--section-padding);
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  margin-top: 2.5rem;
+}
+
+.step-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-faint);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  position: relative;
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--primary-dim);
+  line-height: 1;
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--primary-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.step-desc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ============================================================================
+   CONTACT CTA BAND
+   ============================================================================ */
+/* Contact CTA band */
+.contact-cta-band {
+  background: rgba(29, 158, 117, 0.06);
+  border-top: 1px solid var(--border-faint);
+  border-bottom: 1px solid var(--border-faint);
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.contact-cta-band h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.contact-cta-band p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-band-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ============================================================================
+   SUB-PAGE HERO
+   ============================================================================ */
+/* Sub-page hero — no canvas, simpler */
+.subpage-hero {
+  padding: 8rem 0 4rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.subpage-hero .hero-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.subpage-hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.subpage-hero p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.65;
+}
+
+/* ============================================================================
+   DIVISION DETAIL SECTION (divisions.html)
+   ============================================================================ */
+/* Division detail section */
+.division-detail-section {
+  padding: var(--section-padding);
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.division-detail-section:last-of-type {
+  border-bottom: none;
+}
+
+.division-detail-inner {
+  max-width: 860px;
+}
+
+.division-exec-logo {
+  height: 48px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+}
+
+.division-products-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0;
+}
+
+.division-product-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--primary-dim);
+  border: 1px solid rgba(29, 158, 117, 0.25);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  font-size: 0.8rem;
+  font-family: var(--font-mono);
+  color: var(--primary-glow);
+  text-decoration: none;
+  transition: background var(--transition-smooth);
+}
+
+.division-product-pill:hover {
+  background: rgba(29, 158, 117, 0.25);
+}
+
+.division-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* Coming Soon division — muted */
+.division-coming-soon {
+  opacity: 0.65;
+}
+
+.division-coming-soon .division-detail-inner {
+  pointer-events: none;
+}
+
+.division-coming-soon .division-actions {
+  pointer-events: auto;
+}
+
+/* ============================================================================
+   ABOUT PAGE — FOUNDER SECTION (sub-page variant)
+   ============================================================================ */
+/* Founder section */
+.founder-section-about {
+  padding: var(--section-padding);
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 768px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.founder-photo {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  border: 1px solid var(--border-glow);
+  object-fit: cover;
+  aspect-ratio: 1;
+}
+
+.founder-name-about {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.founder-title-about {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.founder-bio-about {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 1.5rem;
+}
+
+/* ============================================================================
+   VALUES SECTION (about.html)
+   ============================================================================ */
+/* Values section */
+.values-section-about {
+  padding: var(--section-padding);
+  background: rgba(29, 158, 117, 0.03);
+}
+
+.values-grid-about {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.value-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-faint);
+  border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+}
+
+.value-name {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--primary-glow);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.value-desc {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* ============================================================================
+   CONTACT PAGE — QUICK-ACTION CARDS
+   ============================================================================ */
+/* Contact quick actions */
+.contact-quick-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.25rem;
+  margin: 2.5rem 0;
+}
+
+.contact-quick-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-faint);
+  border-radius: 12px;
+  padding: 1.75rem 1rem;
+  text-decoration: none;
+  color: var(--text-primary);
+  transition: border-color var(--transition-smooth), box-shadow var(--transition-smooth);
+}
+
+.contact-quick-card:hover,
+.contact-quick-card:focus-visible {
+  border-color: var(--border-glow);
+  box-shadow: var(--glow-green);
+  outline: none;
+}
+
+.contact-quick-card .cqc-icon {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.contact-quick-card .cqc-label {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.contact-quick-card .cqc-sub {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+/* ============================================================================
+   404 PAGE
+   ============================================================================ */
+/* 404 page */
+.not-found-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+
+.not-found-code {
+  font-family: var(--font-display);
+  font-size: clamp(5rem, 15vw, 10rem);
+  font-weight: 900;
+  color: var(--primary-dim);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.not-found-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.not-found-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+/* ============================================================================
+   FORM NOTE + SUBMIT BUTTON FULL-WIDTH
+   ============================================================================ */
+.form-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.75rem;
+  font-family: var(--font-mono);
+}
+
+.btn-submit.btn-full-width {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ============================================================================
+   STATIC CONTENT PAGES (privacy, terms)
+   ============================================================================ */
+/* Static content pages (privacy, terms) */
+.static-content-section {
+  padding: 6rem 0 8rem;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.static-content-section h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.static-content-section .last-updated {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.static-content-section h2 {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--primary-glow);
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.static-content-section p,
+.static-content-section li {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 0.75rem;
+}
+
+.static-content-section ul {
+  padding-left: 1.5rem;
+}
