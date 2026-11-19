@@ -1,3 +1,6 @@
+# NSK Groups Website
+# https://nskgroups.website
+
 User-agent: *
 Allow: /
 
@@ -43,9 +46,5 @@ Allow: /
 
 User-agent: CCBot
 Allow: /
-
-# LLM Knowledge Bases
-# https://nskgroups.website/llms.txt
-# https://nskgroups.website/llms-full.txt
 
 Sitemap: https://nskgroups.website/sitemap.xml

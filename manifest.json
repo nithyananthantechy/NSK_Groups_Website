@@ -1,7 +1,7 @@
 ﻿{
-  "name": "NSK Groups | Technology Holding Conglomerate",
+  "name": "NSK Groups | Technology — Erode, Tamil Nadu",
   "short_name": "NSK Groups",
-  "description": "NSK Groups is a premier technology holding company governing NiTechSpark, NiteHire, and NiteOrbit, and developing proprietary intelligent software applications.",
+  "description": "NSK Groups is a technology company in Erode, Tamil Nadu. IT support, hiring technology, and software for businesses.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#020408",
@@ -23,6 +23,6 @@
       "type": "image/svg+xml"
     }
   ],
-  "categories": ["business", "technology", "productivity"],
+  "categories": ["business", "technology"],
   "lang": "en"
 }
