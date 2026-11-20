@@ -257,20 +257,31 @@
           submitBtn.disabled = false;
           submitBtn.textContent = originalBtnText;
         }
-        if (data.success === 'true' || data.success === true || response_ok_fallback(data)) {
+        const isSuccess = data.success === 'true' || data.success === true;
+        const needsActivation = data.message && data.message.toLowerCase().includes('activ');
+
+        if (needsActivation) {
           if (successAlert) {
+            successAlert.style.backgroundColor = '#FEF3C7';
+            successAlert.style.borderColor = '#FCD34D';
+            successAlert.style.color = '#92400E';
+            successAlert.innerHTML = '<strong>One-Time Setup Required:</strong> An activation email has been sent to <strong>nithyananthan@nitechspark.site</strong>. Please check your inbox (or Spam folder) and click the <strong>&ldquo;Activate Form&rdquo;</strong> button to begin receiving customer inquiries.';
+            successAlert.style.display = 'block';
+          }
+        } else if (isSuccess) {
+          if (successAlert) {
+            successAlert.style.backgroundColor = '#DCFCE7';
+            successAlert.style.borderColor = '#86EFAC';
+            successAlert.style.color = '#166534';
             successAlert.textContent = '✓ Message received! We will respond to your inquiry within one business day.';
             successAlert.style.display = 'block';
           }
           form.reset();
-        } else if (data.message && data.message.toLowerCase().includes('activate')) {
-          if (successAlert) {
-            successAlert.textContent = '✓ Activation email sent to nithyananthan@nitechspark.site. Please click "Activate Form" in your inbox once to complete setup.';
-            successAlert.style.display = 'block';
-          }
-          form.reset();
         } else {
-          throw new Error(data.message || 'Submission error');
+          if (errAlert) {
+            errAlert.textContent = data.message || 'Unable to send message. Please contact us via WhatsApp or email nithyananthan@nitechspark.site.';
+            errAlert.style.display = 'block';
+          }
         }
       })
       .catch(error => {
@@ -278,13 +289,11 @@
           submitBtn.disabled = false;
           submitBtn.textContent = originalBtnText;
         }
-        // Fallback: If fetch is blocked, submit form natively via standard POST
-        form.submit();
+        if (errAlert) {
+          errAlert.textContent = 'Unable to send message. Please email nithyananthan@nitechspark.site or contact us on WhatsApp.';
+          errAlert.style.display = 'block';
+        }
       });
-
-      function response_ok_fallback(data) {
-        return data && !data.error && data.status !== 'error';
-      }
     });
   }
 
