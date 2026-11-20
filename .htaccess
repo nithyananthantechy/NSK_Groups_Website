@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+# Redirect www to non-www
+RewriteCond %{HTTP_HOST} ^www\.nskgroups\.website [NC]
+RewriteRule ^(.*)$ https://nskgroups.website/$1 [L,R=301]
+
+# Redirect HTTP to HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://nskgroups.website/$1 [L,R=301]
+</IfModule>
