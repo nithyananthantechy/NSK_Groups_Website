@@ -71,7 +71,8 @@
   /* Layout Constraints */
   --container-max: 1200px;
   --container-narrow: 840px;
-  --header-height: 72px;
+  --nav-container-max: 1400px;
+  --header-height: 78px;
 }
 
 /* ============================================================================
@@ -249,11 +250,11 @@ ul, ol {
 
 .nav-container {
   width: 100%;
-  max-width: var(--container-max);
+  max-width: var(--nav-container-max, 1400px);
   margin-left: auto;
   margin-right: auto;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: clamp(1.5rem, 3vw, 2.5rem);
+  padding-right: clamp(1.5rem, 3vw, 2.5rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -267,8 +268,13 @@ ul, ol {
 }
 
 .logo-svg {
-  height: 38px;
+  height: 46px;
   width: auto;
+  transition: transform var(--transition-fast);
+}
+
+.logo-svg:hover {
+  transform: scale(1.02);
 }
 
 /* Desktop Nav Links */
@@ -1496,11 +1502,11 @@ ul, ol {
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 64px;
+    --header-height: 68px;
   }
 
   .logo-svg {
-    height: 32px;
+    height: 36px;
   }
   
   .nav-menu,
