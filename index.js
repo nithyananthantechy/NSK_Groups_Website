@@ -223,16 +223,67 @@
         return;
       }
 
-      // Handle placeholder endpoint gracefully in test environments
-      const action = form.getAttribute('action') || '';
-      if (action.includes('[ADD CONTACT FORM ENDPOINT') || action === '#' || action === '') {
-        e.preventDefault();
-        if (errAlert) errAlert.style.display = 'none';
-        if (successAlert) {
-          successAlert.textContent = '✓ Inquiry received. Our team will contact you within one business day.';
-          successAlert.style.display = 'block';
+      // Real asynchronous form submission via FormSubmit
+      e.preventDefault();
+      const submitBtn = document.getElementById('form-submit-button');
+      const originalBtnText = submitBtn ? submitBtn.textContent : 'Send Message →';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending Message...';
+      }
+      if (errAlert) errAlert.style.display = 'none';
+      if (successAlert) successAlert.style.display = 'none';
+
+      const formData = {
+        name: nameInput ? nameInput.value.trim() : '',
+        email: emailInput ? emailInput.value.trim() : '',
+        phone: (document.getElementById('form-phone') || {}).value || 'Not provided',
+        subject: subjectInput ? subjectInput.value : '',
+        message: messageInput ? messageInput.value.trim() : '',
+        _subject: 'New Business Inquiry — NSK Groups Website'
+      };
+
+      fetch('https://formsubmit.co/ajax/nithyananthan@nitechspark.site', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      .then(response => response.json())
+      .then(data => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
         }
-        form.reset();
+        if (data.success === 'true' || data.success === true || response_ok_fallback(data)) {
+          if (successAlert) {
+            successAlert.textContent = '✓ Message received! We will respond to your inquiry within one business day.';
+            successAlert.style.display = 'block';
+          }
+          form.reset();
+        } else if (data.message && data.message.toLowerCase().includes('activate')) {
+          if (successAlert) {
+            successAlert.textContent = '✓ Activation email sent to nithyananthan@nitechspark.site. Please click "Activate Form" in your inbox once to complete setup.';
+            successAlert.style.display = 'block';
+          }
+          form.reset();
+        } else {
+          throw new Error(data.message || 'Submission error');
+        }
+      })
+      .catch(error => {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalBtnText;
+        }
+        // Fallback: If fetch is blocked, submit form natively via standard POST
+        form.submit();
+      });
+
+      function response_ok_fallback(data) {
+        return data && !data.error && data.status !== 'error';
       }
     });
   }

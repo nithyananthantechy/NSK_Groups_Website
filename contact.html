@@ -198,8 +198,13 @@
               Fill in your details below and we will get back to you within one business day.
             </p>
 
-            <!-- Form: action endpoint configured via environment placeholder; includes spam protection honeypot -->
-            <form id="nsk-contact-form" class="contact-form" method="POST" action="[ADD CONTACT FORM ENDPOINT — e.g. https://formspree.io/f/YOUR_ID]" novalidate>
+            <!-- Form: powered by FormSubmit for direct delivery to nithyananthan@nitechspark.site -->
+            <form id="nsk-contact-form" class="contact-form" method="POST" action="https://formsubmit.co/nithyananthan@nitechspark.site" novalidate>
+              
+              <!-- FormSubmit configuration fields -->
+              <input type="hidden" name="_subject" value="New Business Inquiry — NSK Groups Website">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
               
               <!-- Honeypot anti-spam field (hidden from humans) -->
               <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
