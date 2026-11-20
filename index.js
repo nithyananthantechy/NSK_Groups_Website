@@ -243,7 +243,10 @@
         _subject: 'New Business Inquiry — NSK Groups Website'
       };
 
-      fetch('https://formsubmit.co/ajax/nithyananthan@nitechspark.site', {
+      const actionUrl = form.getAttribute('action') || 'https://formsubmit.co/nithyananthan@nitechspark.site';
+      const ajaxUrl = actionUrl.includes('/ajax/') ? actionUrl : actionUrl.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+
+      fetch(ajaxUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
