@@ -53,8 +53,8 @@
   <!-- =========================================================================
        5. TECHNICAL SEO & PERFORMANCE
        ========================================================================= -->
-  <meta name="theme-color" content="#020408">
-  <meta name="msapplication-TileColor" content="#020408">
+  <meta name="theme-color" content="#0F1626">
+  <meta name="msapplication-TileColor" content="#0F1626">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="NSK Groups">
@@ -70,8 +70,8 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="apple-touch-icon" href="assets/company_logo.png">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Clean Corporate Font: Plus Jakarta Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS Stylesheet -->
   <link rel="stylesheet" href="index.css">
@@ -147,51 +147,50 @@
 </head>
 <body>
 
-  <!-- ===================== GLOBAL 3D STARFIELD CANVAS ===================== -->
-  <canvas id="starfield-canvas" class="motion-animate"></canvas>
-
   <!-- ===================== NAVIGATION BAR ===================== -->
-  <nav id="navbar" class="nav-bar" aria-label="Main navigation">
-    <div class="nav-container">
-      <!-- Logo -->
-      <a href="index.html" class="nav-logo" aria-label="NSK Groups Home">
-        <img src="assets/nsk_logo.svg" alt="NSK Groups" class="logo-svg" width="120" height="40" loading="lazy">
-      </a>
-
-      <!-- Desktop Nav Menu -->
-      <ul class="nav-menu" id="nav-desktop-menu" role="list">
-        <li><a href="index.html" class="nav-link active" aria-current="page"><span class="nav-link-text">Home</span><span class="nav-link-glow"></span></a></li>
-        <li><a href="about.html" class="nav-link"><span class="nav-link-text">About</span><span class="nav-link-glow"></span></a></li>
-        <li><a href="divisions.html" class="nav-link"><span class="nav-link-text">Divisions</span><span class="nav-link-glow"></span></a></li>
-        <li><a href="contact.html" class="nav-link"><span class="nav-link-text">Contact</span><span class="nav-link-glow"></span></a></li>
-      </ul>
-
-      <!-- Nav CTA Actions -->
-      <div class="nav-cta-wrapper">
-        <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-crystal btn-sm nav-cta-btn">Book Free IT Health Check →</a>
-
-        <a href="https://wa.me/917358222972" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-nav" aria-label="Chat on WhatsApp">
-          <svg viewBox="0 0 24 24" class="btn-icon-svg" width="16" height="16" fill="currentColor" aria-hidden="true">
-            <path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.476-.15-.677.15-.2.301-.777.98-.952 1.18-.175.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.63-.927-2.233-.244-.588-.492-.508-.677-.518-.175-.008-.376-.01-.576-.01-.201 0-.527.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.14 4.542.718.31 1.278.496 1.716.635.722.23 1.378.197 1.9.12.58-.088 1.782-.728 2.032-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351zM12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.26 4.87L2 22l5.3-1.39c1.4.75 2.98 1.17 4.74 1.17 5.52 0 10-4.48 10-10s-4.48-10-10-10z"/>
-          </svg>
-          <span>WhatsApp</span>
+  <header>
+    <nav id="navbar" class="nav-bar" aria-label="Main navigation">
+      <div class="nav-container">
+        <!-- Logo -->
+        <a href="index.html" class="nav-logo" aria-label="NSK Groups Home">
+          <img src="assets/nsk_logo.svg" alt="NSK Groups" class="logo-svg" width="120" height="40" loading="lazy">
         </a>
 
-        <!-- Mobile Hamburger -->
-        <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-menu-overlay">
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-          <span class="hamburger-line"></span>
-        </button>
+        <!-- Desktop Nav Menu -->
+        <ul class="nav-menu" id="nav-desktop-menu" role="list">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="divisions.html" class="nav-link">Divisions</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Nav CTA Actions (Single booking button + WhatsApp icon) -->
+        <div class="nav-cta-wrapper">
+          <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crystal nav-cta-btn">Book Free IT Health Check →</a>
+
+          <a href="https://wa.me/917358222972" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-nav" aria-label="Chat on WhatsApp">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.476-.15-.677.15-.2.301-.777.98-.952 1.18-.175.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.63-.927-2.233-.244-.588-.492-.508-.677-.518-.175-.008-.376-.01-.576-.01-.201 0-.527.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.14 4.542.718.31 1.278.496 1.716.635.722.23 1.378.197 1.9.12.58-.088 1.782-.728 2.032-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351zM12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.26 4.87L2 22l5.3-1.39c1.4.75 2.98 1.17 4.74 1.17 5.52 0 10-4.48 10-10s-4.48-10-10-10z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+
+          <!-- Mobile Hamburger -->
+          <button class="hamburger-btn" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="mobile-menu-overlay">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+          </button>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 
   <!-- ===================== MOBILE OVERLAY MENU ===================== -->
   <div class="mobile-overlay" id="mobile-menu-overlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
     <button class="mobile-close-btn" id="mobile-menu-close" aria-label="Close Navigation Menu">&times;</button>
     <ul class="mobile-menu-links" role="list">
-      <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+      <li><a href="index.html" class="mobile-nav-link active">Home</a></li>
       <li><a href="about.html" class="mobile-nav-link">About</a></li>
       <li><a href="divisions.html" class="mobile-nav-link">Divisions</a></li>
       <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
@@ -199,74 +198,50 @@
         <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-crystal btn-md">
           🗓 Book Free IT Health Check →
         </a>
-        <a href="https://wa.me/917358222972" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp-mob">
+        <a href="https://wa.me/917358222972" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-mob">
           💬 Chat on WhatsApp
         </a>
       </li>
     </ul>
   </div>
 
-  <main>
+  <main id="main-content">
 
     <!-- ===================== HERO SECTION ===================== -->
     <section class="hero-section" id="home" aria-labelledby="hero-headline-text">
+      <div class="section-container">
+        <div class="hero-content">
+          <div class="hero-label" id="hero-label-top">
+            NSK GROUPS · ERODE, TAMIL NADU
+          </div>
 
-      <!-- Hero Content -->
-      <div class="hero-content">
-        <div class="hero-label" id="hero-label-top">
-          <span class="label-bracket">[</span> NSK GROUPS · ERODE, TAMIL NADU <span class="label-bracket">]</span>
-        </div>
+          <!-- Clean Corporate Headline -->
+          <h1 class="hero-headline" id="hero-headline-text">
+            Technology businesses built in Erode.
+          </h1>
 
-        <!-- Crystal-Glow Headline -->
-        <h1 class="hero-headline crystal-text" id="hero-headline-text">
-          <span class="crystal-line crystal-line-1">
-            <span class="crystal-word" data-text="Technology">Technology</span>
-          </span>
-          <span class="crystal-line crystal-line-2">
-            <span class="crystal-word" data-text="businesses">businesses</span>
-          </span>
-          <span class="crystal-line crystal-line-3">
-            <span class="crystal-word" data-text="built in Erode.">built in Erode.</span>
-          </span>
-        </h1>
+          <!-- Grammatically Correct Support Text -->
+          <div class="hero-subtext-panel">
+            <p class="hero-subtext" id="hero-subheadline-text">
+              NSK Groups provides IT support, backup and security for businesses, and builds hiring technology and software.
+            </p>
+          </div>
 
-        <!-- Sub-Text Panel -->
-        <div class="hero-subtext-panel">
-          <p class="hero-subtext" id="hero-subheadline-text">
-            NSK Groups is a technology company in Erode, Tamil Nadu. We build IT support, hiring technology, and software for businesses.
-          </p>
-        </div>
-
-        <!-- Hero CTA Buttons -->
-        <div class="hero-actions-container">
-          <div class="hero-actions-row">
-            <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-hero-primary">
-              <span class="btn-text">Book a free 30-minute IT health check</span>
-              <span class="btn-arrow-icon">→</span>
-            </a>
-            <a href="https://wa.me/917358222972" target="_blank" rel="noopener noreferrer" class="btn btn-hero-whatsapp">
-              <svg viewBox="0 0 24 24" class="btn-svg-icon" width="17" height="17" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.476-.15-.677.15-.2.301-.777.98-.952 1.18-.175.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.63-.927-2.233-.244-.588-.492-.508-.677-.518-.175-.008-.376-.01-.576-.01-.201 0-.527.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.14 4.542.718.31 1.278.496 1.716.635.722.23 1.378.197 1.9.12.58-.088 1.782-.728 2.032-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351zM12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.26 4.87L2 22l5.3-1.39c1.4.75 2.98 1.17 4.74 1.17 5.52 0 10-4.48 10-10s-4.48-10-10-10z"/>
-              </svg>
-              <span class="btn-text">Chat on WhatsApp</span>
-            </a>
+          <!-- Hero Action Buttons -->
+          <div class="hero-actions-container">
+            <div class="hero-actions-row">
+              <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-hero-primary">
+                Book a free 30-minute IT health check →
+              </a>
+              <a href="https://wa.me/917358222972" target="_blank" rel="noopener noreferrer" class="btn btn-hero-whatsapp">
+                <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
+                  <path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.476-.15-.677.15-.2.301-.777.98-.952 1.18-.175.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.63-.927-2.233-.244-.588-.492-.508-.677-.518-.175-.008-.376-.01-.576-.01-.201 0-.527.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.14 4.542.718.31 1.278.496 1.716.635.722.23 1.378.197 1.9.12.58-.088 1.782-.728 2.032-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351zM12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.26 4.87L2 22l5.3-1.39c1.4.75 2.98 1.17 4.74 1.17 5.52 0 10-4.48 10-10s-4.48-10-10-10z"/>
+                </svg>
+                Chat on WhatsApp
+              </a>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Orbit Rings (decorative) -->
-      <div class="orbit-container" aria-hidden="true">
-        <div class="orbit-ring ring-teal"></div>
-        <div class="orbit-ring ring-blue"></div>
-        <div class="orbit-ring ring-green-faint"></div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div class="scroll-indicator" aria-hidden="true">
-        <span class="scroll-arrow-text">EXPLORE</span>
-        <svg class="scroll-arrow-icon" viewBox="0 0 24 24" width="24" height="24">
-          <path d="M12 4v16M5 13l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
       </div>
     </section>
 
@@ -275,18 +250,17 @@
       <div class="section-container">
         <div class="section-header reveal-on-scroll text-center">
           <span class="section-label">OUR DIVISIONS</span>
-          <h2 class="section-heading crystal-heading-sm" id="divisions-heading">Three divisions. One group.</h2>
+          <h2 class="section-heading" id="divisions-heading">Three divisions. One group.</h2>
+          <p class="section-subtext">Specialized business divisions providing practical IT infrastructure, recruitment platforms, and future technology.</p>
         </div>
 
         <div class="ventures-grid">
 
-          <!-- NITECHSPARK (featured) -->
+          <!-- NITECHSPARK (Featured) -->
           <div class="interactive-card venture-card venture-card-nitechspark reveal-on-scroll" id="card-nitechspark">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
             <div class="card-top-row">
               <div class="venture-brand-badge">
-                <img src="assets/nitechspark_logo.png" alt="NITECHSPARK division logo" class="venture-official-logo" width="120" height="40" loading="lazy">
+                <img src="assets/nitechspark_logo.png" alt="NITECHSPARK logo" class="venture-official-logo" width="120" height="40" loading="lazy">
               </div>
               <div class="card-badge badge-live">
                 <span class="pulse-dot"></span> LIVE
@@ -295,7 +269,7 @@
             <h3 class="card-title">NITECHSPARK</h3>
             <span class="card-tagline">IT support, backup, security, and software for businesses.</span>
             <p class="card-desc">
-              NITECHSPARK provides IT support, managed services, backup solutions, network security, and business software to help your team focus on what matters.
+              NITECHSPARK provides IT support, managed services, backup solutions, network security, and business software to help your team work without disruption.
             </p>
             <a href="https://nitechspark.site" target="_blank" rel="noopener noreferrer" class="card-link">
               Visit nitechspark.site ↗
@@ -304,11 +278,9 @@
 
           <!-- NiteHire -->
           <div class="interactive-card venture-card venture-card-nitehire reveal-on-scroll" id="card-nitehire">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
             <div class="card-top-row">
               <div class="venture-brand-badge">
-                <img src="assets/nitehire_logo.png" alt="NiteHire division logo" class="venture-official-logo" width="120" height="40" loading="lazy">
+                <img src="assets/nitehire_logo.png" alt="NiteHire logo" class="venture-official-logo" width="120" height="40" loading="lazy">
               </div>
               <div class="card-badge badge-live">
                 <span class="pulse-dot"></span> LIVE
@@ -317,26 +289,24 @@
             <h3 class="card-title">NiteHire</h3>
             <span class="card-tagline">AI-powered hiring and interview platform.</span>
             <p class="card-desc">
-              NiteHire helps businesses hire better with AI-driven candidate screening, video interviews, and a complete hiring pipeline manager.
+              NiteHire helps businesses hire better with AI-driven candidate screening, video interviews, and a structured hiring pipeline manager.
             </p>
             <a href="https://nitehire.site" target="_blank" rel="noopener noreferrer" class="card-link">
               Visit nitehire.site ↗
             </a>
           </div>
 
-          <!-- NiteOrbit -->
+          <!-- NiteOrbit (Space look strictly contained here) -->
           <div class="interactive-card venture-card venture-card-niteorbit reveal-on-scroll" id="card-niteorbit">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
             <div class="card-top-row">
               <div class="venture-brand-badge">
-                <img src="assets/niteorbit_logo.png" alt="NiteOrbit division logo" class="venture-official-logo" width="120" height="40" loading="lazy">
+                <img src="assets/niteorbit_logo.png" alt="NiteOrbit logo" class="venture-official-logo" width="120" height="40" loading="lazy">
               </div>
               <div class="card-badge badge-coming-soon">
                 <span class="coming-soon-dot"></span> COMING SOON
               </div>
             </div>
-            <h3 class="card-title niteorbit-title">NiteOrbit</h3>
+            <h3 class="card-title">NiteOrbit</h3>
             <span class="card-tagline">Space ground-control platform.</span>
             <p class="card-desc">
               NiteOrbit is an upcoming division of NSK Groups.
@@ -352,17 +322,16 @@
       <div class="section-container">
         <div class="section-header reveal-on-scroll text-center">
           <span class="section-label">OUR PRODUCTS</span>
-          <h2 class="section-heading crystal-heading-sm" id="products-heading">Built by our divisions.</h2>
+          <h2 class="section-heading" id="products-heading">Built by our divisions.</h2>
+          <p class="section-subtext">Purpose-built software platforms developed directly by our engineering teams.</p>
         </div>
 
         <div class="products-grid">
 
           <!-- NEXORIQ -->
           <div class="interactive-card product-card reveal-on-scroll" id="prod-nexoriq">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
             <div class="product-card-top">
-              <div class="product-status-tag tag-active">
+              <div class="product-status-tag">
                 <span class="pulse-dot"></span> NITECHSPARK
               </div>
             </div>
@@ -372,16 +341,14 @@
               AI-assisted IT infrastructure and cybersecurity assessment platform for consultants and MSPs.
             </p>
             <div class="product-actions">
-              <a href="https://nexoriq.nitechspark.site" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-solid btn-sm">Visit NEXORIQ ↗</a>
+              <a href="https://nexoriq.nitechspark.site" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crystal-outline">Visit NEXORIQ ↗</a>
             </div>
           </div>
 
           <!-- NiteOps -->
           <div class="interactive-card product-card reveal-on-scroll" id="prod-niteops">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
             <div class="product-card-top">
-              <div class="product-status-tag tag-active">
+              <div class="product-status-tag">
                 <span class="pulse-dot"></span> NITECHSPARK
               </div>
             </div>
@@ -391,16 +358,14 @@
               IT operations platform by NITECHSPARK — manage, monitor, and maintain your business IT infrastructure.
             </p>
             <div class="product-actions">
-              <a href="https://niteops.nitechspark.site" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-solid btn-sm">Visit NiteOps ↗</a>
+              <a href="https://niteops.nitechspark.site" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crystal-outline">Visit NiteOps ↗</a>
             </div>
           </div>
 
           <!-- CraftResume -->
           <div class="interactive-card product-card reveal-on-scroll" id="prod-craftresume">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
             <div class="product-card-top">
-              <div class="product-status-tag tag-active">
+              <div class="product-status-tag">
                 <span class="pulse-dot"></span> NiteHire
               </div>
             </div>
@@ -410,7 +375,7 @@
               AI resume builder by NiteHire — create standout resumes aligned to the jobs you want.
             </p>
             <div class="product-actions">
-              <a href="https://craftresume.nitehire.site" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-solid btn-sm">Visit CraftResume ↗</a>
+              <a href="https://craftresume.nitehire.site" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-crystal-outline">Visit CraftResume ↗</a>
             </div>
           </div>
 
@@ -422,39 +387,37 @@
     <section class="section-padding mission-section" id="how-we-work" aria-labelledby="how-we-work-heading">
       <div class="section-container">
         <div class="section-header reveal-on-scroll text-center">
-          <h2 class="section-heading crystal-heading-sm" id="how-we-work-heading">How we work</h2>
+          <span class="section-label">OUR PROCESS</span>
+          <h2 class="section-heading" id="how-we-work-heading">How we work</h2>
+          <p class="section-subtext">A disciplined, straightforward approach to managing and supporting your business technology.</p>
         </div>
 
         <div class="values-grid">
 
-          <div class="interactive-card value-card reveal-on-scroll">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
+          <div class="value-card reveal-on-scroll">
             <span class="value-number">01</span>
-            <h3 class="card-title value-title">Understand</h3>
+            <h3 class="value-title">Understand</h3>
             <p class="card-desc">We start by listening. We learn about your systems and your goals before we recommend anything.</p>
           </div>
 
-          <div class="interactive-card value-card reveal-on-scroll">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
+          <div class="value-card reveal-on-scroll">
             <span class="value-number">02</span>
-            <h3 class="card-title value-title">Build</h3>
+            <h3 class="value-title">Build</h3>
             <p class="card-desc">We design and deploy solutions that fit your business — not generic templates, but the right tools for you.</p>
           </div>
 
-          <div class="interactive-card value-card reveal-on-scroll">
-            <div class="card-glow"></div>
-            <div class="card-hologram-border"></div>
+          <div class="value-card reveal-on-scroll">
             <span class="value-number">03</span>
-            <h3 class="card-title value-title">Support</h3>
+            <h3 class="value-title">Support</h3>
             <p class="card-desc">We stay on and keep things running. Your IT doesn't stop, and neither do we.</p>
           </div>
 
         </div>
 
-        <div class="mission-cta-row reveal-on-scroll text-center" style="margin-top: 2.5rem;">
-          <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-crystal-solid btn-sm">Book a free 30-minute IT health check →</a>
+        <div class="reveal-on-scroll text-center" style="margin-top: 3rem;">
+          <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-crystal">
+            Book a free 30-minute IT health check →
+          </a>
         </div>
       </div>
     </section>
@@ -462,14 +425,14 @@
     <!-- ===================== CONTACT CTA BAND ===================== -->
     <section class="section-padding contact-cta-band" id="contact-cta" aria-labelledby="contact-cta-heading">
       <div class="section-container text-center">
-        <h2 class="section-heading crystal-heading-sm" id="contact-cta-heading">Need IT support in Erode?</h2>
-        <p class="section-subtext">Book a free 30-minute check of your IT systems. No obligation.</p>
-        <div class="hero-actions-row" style="justify-content: center; margin-top: 2rem;">
+        <h2 id="contact-cta-heading">Need IT support in Erode?</h2>
+        <p>Book a free 30-minute check of your IT systems. No obligation.</p>
+        <div class="hero-actions-row">
           <a href="https://calendar.app.google/9HsNzYhbRBRwCBbG6" target="_blank" rel="noopener noreferrer" class="btn btn-hero-primary">
             Book Free IT Health Check →
           </a>
           <a href="https://wa.me/917358222972" target="_blank" rel="noopener noreferrer" class="btn btn-hero-whatsapp">
-            <svg viewBox="0 0 24 24" class="btn-svg-icon" width="17" height="17" fill="currentColor" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true">
               <path d="M17.472 14.382c-.301-.15-1.782-.879-2.058-.98-.276-.1-.476-.15-.677.15-.2.301-.777.98-.952 1.18-.175.2-.351.226-.652.075-.301-.15-1.27-.468-2.42-1.493-.895-.798-1.5-1.784-1.675-2.085-.176-.301-.019-.464.132-.614.136-.135.301-.351.451-.527.15-.175.2-.301.3-.501.1-.2.05-.376-.025-.526-.075-.15-.677-1.63-.927-2.233-.244-.588-.492-.508-.677-.518-.175-.008-.376-.01-.576-.01-.201 0-.527.075-.802.376-.276.301-1.053 1.028-1.053 2.508 0 1.479 1.078 2.909 1.229 3.109.15.2 2.122 3.24 5.14 4.542.718.31 1.278.496 1.716.635.722.23 1.378.197 1.9.12.58-.088 1.782-.728 2.032-1.431.251-.703.251-1.306.176-1.431-.075-.125-.276-.201-.577-.351zM12.04 2c-5.52 0-10 4.48-10 10 0 1.76.46 3.42 1.26 4.87L2 22l5.3-1.39c1.4.75 2.98 1.17 4.74 1.17 5.52 0 10-4.48 10-10s-4.48-10-10-10z"/>
             </svg>
             Chat on WhatsApp
@@ -561,7 +524,7 @@
     </div>
   </footer>
 
-  <!-- Application Logic JS -->
+  <!-- Clean Corporate JS -->
   <script src="index.js"></script>
 </body>
 </html>
