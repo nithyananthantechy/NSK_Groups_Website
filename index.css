@@ -1498,6 +1498,10 @@ ul, ol {
   :root {
     --header-height: 64px;
   }
+
+  .logo-svg {
+    height: 32px;
+  }
   
   .nav-menu,
   .nav-cta-wrapper .nav-cta-btn,
