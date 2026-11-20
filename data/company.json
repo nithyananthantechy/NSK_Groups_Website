@@ -1,0 +1,54 @@
+{
+  "name": "NSK Groups",
+  "founder": {
+    "name": "Nithyananthan Nagarajan",
+    "title": "Founder and Managing Director",
+    "linkedin": "https://www.linkedin.com/in/nithyananthan-nagarajan/"
+  },
+  "address": {
+    "street": "Mullampatti, Malayampalayam, Nasiyanur",
+    "locality": "Erode",
+    "region": "Tamil Nadu",
+    "postalCode": "638107",
+    "country": "India",
+    "countryCode": "IN",
+    "full": "Mullampatti, Malayampalayam, Nasiyanur, Erode, Tamil Nadu, India — 638107",
+    "short": "Mullampatti, Nasiyanur, Erode — 638107"
+  },
+  "geo": {
+    "latitude": "11.3410",
+    "longitude": "77.7172"
+  },
+  "contact": {
+    "phone": "+91 73582 22972",
+    "phoneRaw": "+917358222972",
+    "phoneTel": "+91-73582-22972",
+    "email": "nithyananthan@nitechspark.site",
+    "whatsappUrl": "https://wa.me/917358222972",
+    "bookingUrl": "https://calendar.app.google/9HsNzYhbRBRwCBbG6"
+  },
+  "social": {
+    "linkedinCompany": "https://www.linkedin.com/company/nskgroups",
+    "linkedinNitechspark": "https://www.linkedin.com/company/nitechsparktech"
+  },
+  "domain": "https://nskgroups.website",
+  "divisions": {
+    "nitechspark": {
+      "name": "NITECHSPARK",
+      "url": "https://nitechspark.site",
+      "status": "active",
+      "focus": "IT support, backup, security, software and automation"
+    },
+    "nitehire": {
+      "name": "NiteHire",
+      "url": "https://nitehire.site",
+      "status": "active",
+      "focus": "AI-powered hiring and interview platform"
+    },
+    "niteorbit": {
+      "name": "NiteOrbit",
+      "status": "upcoming",
+      "focus": "Upcoming space ground-control platform"
+    }
+  }
+}
