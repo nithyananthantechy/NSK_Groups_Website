@@ -957,6 +957,10 @@ ul, ol {
   box-shadow: var(--shadow-sm);
 }
 
+.founder-grid.no-photo {
+  grid-template-columns: 1fr;
+}
+
 .founder-photo {
   width: 100%;
   border-radius: var(--radius-sm);
