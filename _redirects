@@ -1,3 +1,10 @@
+# Clean URLs (serve .html without extension in URL)
+/divisions /divisions.html 200
+/about /about.html 200
+/contact /contact.html 200
+/privacy /privacy.html 200
+/terms /terms.html 200
+
 # Redirect www to non-www and enforce HTTPS
 https://www.nskgroups.website/* https://nskgroups.website/:splat 301!
 http://www.nskgroups.website/* https://nskgroups.website/:splat 301!

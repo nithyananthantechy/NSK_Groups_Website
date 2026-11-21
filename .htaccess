@@ -8,4 +8,13 @@ RewriteRule ^(.*)$ https://nskgroups.website/$1 [L,R=301]
 # Redirect HTTP to HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://nskgroups.website/$1 [L,R=301]
+
+# Clean URLs: redirect *.html to clean path
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.html [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# Clean URLs: serve *.html internally for clean path
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^(.*)$ $1.html [L]
 </IfModule>
