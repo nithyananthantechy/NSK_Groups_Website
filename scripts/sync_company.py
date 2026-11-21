@@ -73,6 +73,23 @@ def sync():
             content
         )
 
+        # 5. Update Contact page office location address
+        if os.path.basename(hf) == 'contact.html':
+            content = re.sub(
+                r'<address class="info-value">.*?</address>',
+                f'<address class="info-value">{addr["street"]}<br>{addr["locality"]}, {addr["region"]} {addr["postalCode"]}</address>',
+                content,
+                flags=re.DOTALL
+            )
+
+        # 6. Update Privacy & Terms contact address
+        if os.path.basename(hf) in ['privacy.html', 'terms.html']:
+            content = re.sub(
+                r'Attention: Nithyananthan Nagarajan, Founder and Managing Director<br>\s*[^<]+<br>',
+                f'Attention: Nithyananthan Nagarajan, Founder and Managing Director<br>\n          {addr["full"]}<br>',
+                content
+            )
+
         with open(hf, 'w', encoding='utf-8') as f:
             f.write(content)
         print(f"  ✓ Synced {os.path.basename(hf)}")
